@@ -57,11 +57,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
-    <Folder Include="QC\DAC\Master\" />
-    <Folder Include="QC\Graph\Entry\" />
-    <Folder Include="QC\Graph\Maint\" />
-    <Folder Include="QC\Support\" />
+    <Folder Include="Formulation\DAC\Master\" />
+    <Folder Include="Formulation\Graph\Entry\" />
+    <Folder Include="Formulation\Graph\Maint\" />
+    <Folder Include="Support\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
