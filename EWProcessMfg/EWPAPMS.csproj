@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formulation\DAC\Master\" />
+    <Folder Include="Formulation\DAC\" />
     <Folder Include="Formulation\Graph\Entry\" />
     <Folder Include="Formulation\Graph\Maint\" />
     <Folder Include="Support\" />
