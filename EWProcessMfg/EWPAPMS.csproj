@@ -54,12 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Examples.cs" />
+    <Compile Include="Formulation\Graph\Maint\EWPMFormulaMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Formulation\DAC\" />
     <Folder Include="Formulation\Graph\Entry\" />
-    <Folder Include="Formulation\Graph\Maint\" />
     <Folder Include="Support\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
