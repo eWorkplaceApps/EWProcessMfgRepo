@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JAMS">
+      <HintPath>..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\JAMS.dll</HintPath>
+    </Reference>
     <Reference Include="PX.Common">
       <HintPath>..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.Common.dll</HintPath>
       <Private>False</Private>
@@ -54,13 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Examples.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormula.cs" />
+    <Compile Include="Formulation\DAC\EWPMSetup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaMaint.cs" />
+    <Compile Include="Formulation\Graph\Maint\EWPMSetupMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\Attributes.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formulation\DAC\" />
     <Folder Include="Formulation\Graph\Entry\" />
-    <Folder Include="Support\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\ProjectMetadata.xml" />
