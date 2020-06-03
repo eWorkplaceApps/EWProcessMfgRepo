@@ -58,9 +58,9 @@
   <ItemGroup>
     <Compile Include="Examples.cs" />
     <Compile Include="Formulation\DAC\EWPMFormula.cs" />
-    <Compile Include="Formulation\DAC\EWPMSetup.cs" />
+    <Compile Include="Configuration\EWPMSetup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaMaint.cs" />
-    <Compile Include="Formulation\Graph\Maint\EWPMSetupMaint.cs" />
+    <Compile Include="Configuration\EWPMSetupMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\Attributes.cs" />
   </ItemGroup>
