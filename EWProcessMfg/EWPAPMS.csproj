@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Examples.cs" />
     <Compile Include="Formulation\DAC\EWPMFormula.cs" />
-    <Compile Include="Configuration\EWPMSetup.cs" />
+    <Compile Include="Configuration\DAC\EWPMSetup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaMaint.cs" />
     <Compile Include="Configuration\EWPMSetupMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,7 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Formulation\Graph\Entry\" />
-    <Folder Include="NewFolder1\" />
+    <Folder Include="Laboratory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\ProjectMetadata.xml" />
