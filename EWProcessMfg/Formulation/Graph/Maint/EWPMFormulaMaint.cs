@@ -25,15 +25,26 @@ namespace EW.PM {
   public class EWPMFormulaMaint:PXRevisionableGraph<EWPMFormulaMaint, EWPMFormula, EWPMFormula.formulaCD, EWPMFormula.revisionNo> {
     //public class PlanMaint:PXGraph<PlanMaint, EWQCPlan> {
     #region selects
-    public PXSelect<EWPMSetup> EwPMSetup;
-    public PXSelect<EWPMFormula> Formula;
+    public PXSetup<EWPMSetup> EwPMSetup;
+   
 
     #endregion
 
     public EWPMFormulaMaint() {
       EWPMSetup setup = EwPMSetup.Current;
-
     }
+
+    #region Formula Events
+    protected virtual void _(Events.FieldUpdated<EWPMFormula, EWPMFormula.hold> e) {
+      EWPMFormula formula = (EWPMFormula)e.Row;
+      if(formula != null && formula.Hold != null && formula.Hold.Value) {
+        formula.Status = EWPMStatus.Inactive;
+      }
+      else {
+        formula.Status = EWPMStatus.Active;
+      }
+    }
+    #endregion
 
 
     #region Override code

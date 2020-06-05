@@ -62,7 +62,7 @@
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaMaint.cs" />
     <Compile Include="Configuration\EWPMSetupMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Support\Attributes.cs" />
+    <Compile Include="Support\EWPMAttributes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Formulation\Graph\Entry\" />

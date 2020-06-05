@@ -141,7 +141,9 @@ namespace EW.PM
 		protected string _Status;
 		[PXDBString(1, IsUnicode = true)]
 		[PXUIField(DisplayName = "Status")]
-		public virtual string Status
+    [PXDefault(FormulaStatus.Development)]
+    [FormulaStatus.List()]
+    public virtual string Status
 		{
 			get
 			{
