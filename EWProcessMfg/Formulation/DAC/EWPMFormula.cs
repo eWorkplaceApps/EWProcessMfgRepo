@@ -16,6 +16,8 @@ using System;
 using JAMS.AM.Attributes;
 using PX.Data;
 using PX.Data.ReferentialIntegrity.Attributes;
+using PX.Objects.CR;
+using PX.Objects.IN;
 
 namespace EW.PM
 {
@@ -155,6 +157,25 @@ namespace EW.PM
 			}
 		}
     #endregion
+    
+
+    #region RMCostMethod
+    public abstract class rMCostMethod:PX.Data.IBqlField {
+    }
+    protected string _RMCostMethod;
+    [PXDBString(1, IsFixed = true)]
+    [PXDefault(INValMethod.Standard)]
+    [PXUIField(DisplayName = "RM Cost Method")]
+    [INValMethod.List()]
+    public virtual string RMCostMethod {
+      get {
+        return this._RMCostMethod;
+      }
+      set {
+        this._RMCostMethod = value;
+      }
+    }
+    #endregion
     #region Hold
     public abstract class hold:PX.Data.IBqlField {
     }
@@ -204,12 +225,16 @@ namespace EW.PM
     #endregion
 
     #region OwnerID
-    public abstract class ownerID:PX.Data.IBqlField {
+
+    public abstract class ownerID:PX.Data.BQL.BqlGuid.Field<ownerID> {
     }
-    protected int? _OwnerID;
-    [PXDBInt()]
-    [PXUIField(DisplayName = "OwnerID")]
-    public virtual int? OwnerID {
+    protected Guid? _OwnerID;
+    [PXDBGuid()]
+    [PXDefault(typeof(Search<CREmployee.userID, Where<CREmployee.userID, Equal<Current<AccessInfo.userID>>>>),
+            PersistingCheck = PXPersistingCheck.Nothing)]
+    [PXSelector(typeof(CREmployee.userID),SubstituteKey = typeof(CREmployee.acctName))]
+    [PXUIField(DisplayName = "Owner")]
+    public virtual Guid? OwnerID {
       get {
         return this._OwnerID;
       }
@@ -217,6 +242,112 @@ namespace EW.PM
         this._OwnerID = value;
       }
     }
+    #endregion
+
+    #region Details
+
+    #region FormulaClassID
+
+    public abstract class formulaClassID:PX.Data.BQL.BqlInt.Field<formulaClassID> {
+    }
+    protected int? _FormulaClassID;
+    [PXDBInt()]
+    [PXSelector(typeof(CREmployee.userID), SubstituteKey = typeof(CREmployee.acctName))]
+    [PXUIField(DisplayName = "Formula Class IDy")]
+    public virtual int? FormulaClassID {
+      get {
+        return this._FormulaClassID;
+      }
+      set {
+        this._FormulaClassID = value;
+      }
+    }
+    #endregion
+    #region FormulaPolicyID
+
+    public abstract class formulaPolicyID:PX.Data.BQL.BqlInt.Field<formulaPolicyID> {
+    }
+    protected int? _FormulaPolicyID;
+    [PXDBInt()]
+    [PXSelector(typeof(CREmployee.userID), SubstituteKey = typeof(CREmployee.acctName))]
+    [PXUIField(DisplayName = "Formula Policy ID")]
+    public virtual int? FormulaPolicyID {
+      get {
+        return this._FormulaPolicyID;
+      }
+      set {
+        this._FormulaPolicyID = value;
+      }
+    }
+    #endregion
+
+    #region Approved By
+
+    public abstract class approvedBy:PX.Data.BQL.BqlGuid.Field<approvedBy> {
+    }
+    protected Guid? _ApprovedBy;
+    [PXDBGuid()]
+    [PXSelector(typeof(CREmployee.userID), SubstituteKey = typeof(CREmployee.acctName))]
+    [PXUIField(DisplayName = "Approved By")]
+    public virtual Guid? ApprovedBy {
+      get {
+        return this._ApprovedBy;
+      }
+      set {
+        this._ApprovedBy = value;
+      }
+    }
+    #endregion
+
+    #region ApprovalStatus
+    public abstract class approvalStatus:PX.Data.IBqlField {
+    }
+    protected string _ApprovalStatus;
+    [PXDBString(1, IsUnicode = true)]
+    [PXUIField(DisplayName = "Approval Status")]
+    [PXDefault(FormulaStatus.Development)]
+    [FormulaStatus.List()]
+    public virtual string ApprovalStatus {
+      get {
+        return this._ApprovalStatus;
+      }
+      set {
+        this._ApprovalStatus = value;
+      }
+    }
+    #endregion
+    #region WarehouseID
+    public abstract class defaultRMWarehouse:PX.Data.IBqlField {
+    }
+    protected int? _DefaultRMWarehouse;
+    [PXUIField(DisplayName = "Default RM Warehouse ID")]
+    [Site()]
+      public virtual int? DefaultRMWarehouse {
+      get {
+        return this._DefaultRMWarehouse;
+      }
+      set {
+        this._DefaultRMWarehouse = value;
+      }
+    }
+    #endregion
+
+    #region RevisionReason
+    public abstract class revisionReason:PX.Data.IBqlField {
+    }
+    protected string _RevisionReason;
+    [PXDBString(400, IsUnicode = true)]
+    [PXUIField(DisplayName = "Reason for Revision")]
+    public virtual string RevisionReason {
+      get {
+        return this._RevisionReason;
+      }
+      set {
+        this._RevisionReason = value;
+      }
+    }
+    #endregion
+
     #endregion
 
     #region System Fields
