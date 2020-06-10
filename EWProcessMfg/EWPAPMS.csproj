@@ -56,12 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
+    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
       <DependentUpon>EM201000.aspx</DependentUpon>
-    </Compile>
+    </Content>
     <Compile Include="Examples.cs" />
     <Compile Include="Formulation\DAC\EWPMFormula.cs" />
     <Compile Include="Configuration\DAC\EWPMSetup.cs" />
