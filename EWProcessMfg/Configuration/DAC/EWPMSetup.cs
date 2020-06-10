@@ -18,158 +18,159 @@ using PX.Objects.CS;
 using PX.Objects.IN;
 
 namespace EW.PM {
- 
-
-  [System.SerializableAttribute()]
-  [PXPrimaryGraph(typeof(EWPMSetupMaint))]
-  public class EWPMSetup:PX.Data.IBqlTable {
 
 
-    
+    [System.SerializableAttribute()]
+    [PXPrimaryGraph(typeof(EWPMSetupMaint))]
+    public class EWPMSetup:PX.Data.IBqlTable {
 
-    public abstract class formulaNumberSequenceID:PX.Data.IBqlField {
-    }
-   
-    [PXDBString(10, IsUnicode = true)]
-    [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
-    [PXUIField(DisplayName = "Formula Numbering Sequence")]
-    public virtual string FormulaNumberSequenceID {
-      get;
-      set;
-    }
 
-    public abstract class systemWeightUnit:PX.Data.IBqlField {
-    }
-    [PXDBString(10, IsUnicode = true)]
 
-   // [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
-    [PXUIField(DisplayName = "System Weight")]
-    public virtual string SystemWeightUnit {
-      get;
-      set;
-    }
 
-    public abstract class systemVolumeUnit:PX.Data.IBqlField {
-    }
-    [PXDBString(10, IsUnicode = true)]
-    [PXUIField(DisplayName = "System Volumn")]
-    
-    public virtual string SystemVolumeUnit {
-      get;
-      set;
-    }
+        public abstract class formulaNumberSequenceID:PX.Data.IBqlField {
+        }
 
-   
+        [PXDBString(10, IsUnicode = true)]
+        [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
+        [PXUIField(DisplayName = "Formula Numbering Sequence")]
+        public virtual string FormulaNumberSequenceID {
+            get;
+            set;
+        }
 
-    #region System Fields
+        public abstract class systemWeightUnit:PX.Data.IBqlField {
+        }
+        [PXDBString(10, IsUnicode = true)]
 
-    #region CreatedDateTime
-    public abstract class createdDateTime:PX.Data.BQL.BqlDateTime.Field<createdDateTime> {
-    }
-    protected DateTime? _CreatedDateTime;
-    [PXDBCreatedDateTime()]
-    [PXUIField(DisplayName = PXDBLastModifiedByIDAttribute.DisplayFieldNames.CreatedDateTime, Enabled = false, IsReadOnly = true)]
-    public virtual DateTime? CreatedDateTime {
-      get {
-        return this._CreatedDateTime;
-      }
-      set {
-        this._CreatedDateTime = value;
-      }
-    }
-    #endregion
+        // [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
+        [PXUIField(DisplayName = "System Weight")]
+        [PXSelector(typeof(Search<INUnit.fromUnit>), typeof(INUnit.fromUnit), SubstituteKey = typeof(INUnit.fromUnit))]
+        public virtual string SystemWeightUnit {
+            get;
+            set;
+        }
 
-    #region CreatedByScreenID
-    public abstract class createdByScreenID:PX.Data.BQL.BqlString.Field<createdByScreenID> {
-    }
-    protected String _CreatedByScreenID;
-    [PXDBCreatedByScreenID()]
-    public virtual String CreatedByScreenID {
-      get {
-        return this._CreatedByScreenID;
-      }
-      set {
-        this._CreatedByScreenID = value;
-      }
-    }
-    #endregion
+        public abstract class systemVolumeUnit:PX.Data.IBqlField {
+        }
+        [PXDBString(10, IsUnicode = true)]
+        [PXUIField(DisplayName = "System Volumn")]
+        [PXSelector(typeof(Search<INUnit.toUnit, Where<INUnit.fromUnit, Equal<Current<systemWeightUnit>>>>), typeof(INUnit.toUnit), SubstituteKey = typeof(INUnit.toUnit))]
+        public virtual string SystemVolumeUnit {
+            get;
+            set;
+        }
 
-    #region CreatedByID
-    public abstract class createdByID:PX.Data.BQL.BqlGuid.Field<createdByID> {
-    }
-    protected Guid? _CreatedByID;
-    [PXDBCreatedByID()]
-    public virtual Guid? CreatedByID {
-      get {
-        return this._CreatedByID;
-      }
-      set {
-        this._CreatedByID = value;
-      }
-    }
-    #endregion
 
-    #region LastModifiedDateTime
-    public abstract class lastModifiedDateTime:PX.Data.BQL.BqlDateTime.Field<lastModifiedDateTime> {
-    }
-    protected DateTime? _LastModifiedDateTime;
-    [PXDBLastModifiedDateTime()]
-    [PXUIField(DisplayName = PXDBLastModifiedByIDAttribute.DisplayFieldNames.LastModifiedDateTime, Enabled = false, IsReadOnly = true)]
-    public virtual DateTime? LastModifiedDateTime {
-      get {
-        return this._LastModifiedDateTime;
-      }
-      set {
-        this._LastModifiedDateTime = value;
-      }
-    }
-    #endregion
 
-    #region LastModifiedByScreenID
-    public abstract class lastModifiedByScreenID:PX.Data.BQL.BqlString.Field<lastModifiedByScreenID> {
-    }
-    protected String _LastModifiedByScreenID;
-    [PXDBLastModifiedByScreenID()]
-    public virtual String LastModifiedByScreenID {
-      get {
-        return this._LastModifiedByScreenID;
-      }
-      set {
-        this._LastModifiedByScreenID = value;
-      }
-    }
-    #endregion
+        #region System Fields
 
-    #region LastModifiedByID
-    public abstract class lastModifiedByID:PX.Data.BQL.BqlGuid.Field<lastModifiedByID> {
-    }
-    protected Guid? _LastModifiedByID;
-    [PXDBLastModifiedByID()]
-    public virtual Guid? LastModifiedByID {
-      get {
-        return this._LastModifiedByID;
-      }
-      set {
-        this._LastModifiedByID = value;
-      }
-    }
-    #endregion
+        #region CreatedDateTime
+        public abstract class createdDateTime:PX.Data.BQL.BqlDateTime.Field<createdDateTime> {
+        }
+        protected DateTime? _CreatedDateTime;
+        [PXDBCreatedDateTime()]
+        [PXUIField(DisplayName = PXDBLastModifiedByIDAttribute.DisplayFieldNames.CreatedDateTime, Enabled = false, IsReadOnly = true)]
+        public virtual DateTime? CreatedDateTime {
+            get {
+                return this._CreatedDateTime;
+            }
+            set {
+                this._CreatedDateTime = value;
+            }
+        }
+        #endregion
 
-    #region tstamp
-    public abstract class Tstamp:PX.Data.BQL.BqlByteArray.Field<Tstamp> {
-    }
-    protected Byte[] _tstamp;
-    [PXDBTimestamp]
-    public virtual Byte[] tstamp {
-      get {
-        return this._tstamp;
-      }
-      set {
-        this._tstamp = value;
-      }
-    }
-    #endregion
+        #region CreatedByScreenID
+        public abstract class createdByScreenID:PX.Data.BQL.BqlString.Field<createdByScreenID> {
+        }
+        protected String _CreatedByScreenID;
+        [PXDBCreatedByScreenID()]
+        public virtual String CreatedByScreenID {
+            get {
+                return this._CreatedByScreenID;
+            }
+            set {
+                this._CreatedByScreenID = value;
+            }
+        }
+        #endregion
 
-    #endregion
-  }
+        #region CreatedByID
+        public abstract class createdByID:PX.Data.BQL.BqlGuid.Field<createdByID> {
+        }
+        protected Guid? _CreatedByID;
+        [PXDBCreatedByID()]
+        public virtual Guid? CreatedByID {
+            get {
+                return this._CreatedByID;
+            }
+            set {
+                this._CreatedByID = value;
+            }
+        }
+        #endregion
+
+        #region LastModifiedDateTime
+        public abstract class lastModifiedDateTime:PX.Data.BQL.BqlDateTime.Field<lastModifiedDateTime> {
+        }
+        protected DateTime? _LastModifiedDateTime;
+        [PXDBLastModifiedDateTime()]
+        [PXUIField(DisplayName = PXDBLastModifiedByIDAttribute.DisplayFieldNames.LastModifiedDateTime, Enabled = false, IsReadOnly = true)]
+        public virtual DateTime? LastModifiedDateTime {
+            get {
+                return this._LastModifiedDateTime;
+            }
+            set {
+                this._LastModifiedDateTime = value;
+            }
+        }
+        #endregion
+
+        #region LastModifiedByScreenID
+        public abstract class lastModifiedByScreenID:PX.Data.BQL.BqlString.Field<lastModifiedByScreenID> {
+        }
+        protected String _LastModifiedByScreenID;
+        [PXDBLastModifiedByScreenID()]
+        public virtual String LastModifiedByScreenID {
+            get {
+                return this._LastModifiedByScreenID;
+            }
+            set {
+                this._LastModifiedByScreenID = value;
+            }
+        }
+        #endregion
+
+        #region LastModifiedByID
+        public abstract class lastModifiedByID:PX.Data.BQL.BqlGuid.Field<lastModifiedByID> {
+        }
+        protected Guid? _LastModifiedByID;
+        [PXDBLastModifiedByID()]
+        public virtual Guid? LastModifiedByID {
+            get {
+                return this._LastModifiedByID;
+            }
+            set {
+                this._LastModifiedByID = value;
+            }
+        }
+        #endregion
+
+        #region tstamp
+        public abstract class Tstamp:PX.Data.BQL.BqlByteArray.Field<Tstamp> {
+        }
+        protected Byte[] _tstamp;
+        [PXDBTimestamp]
+        public virtual Byte[] tstamp {
+            get {
+                return this._tstamp;
+            }
+            set {
+                this._tstamp = value;
+            }
+        }
+        #endregion
+
+        #endregion
+    }
 }
