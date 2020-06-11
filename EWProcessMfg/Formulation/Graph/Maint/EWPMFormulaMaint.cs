@@ -22,15 +22,28 @@ using JAMS.AM;
 
 namespace EW.PM {
 
-  public class EWPMFormulaMaint:PXRevisionableGraph<EWPMFormulaMaint, EWPMFormula, EWPMFormula.formulaCD, EWPMFormula.revisionNo> {
+  public class EWPMFormulaMaint:PXRevisionableGraph<EWPMFormulaMaint, EWPMFormula, EWPMFormula.formulaID, EWPMFormula.revisionNo> {
     //public class PlanMaint:PXGraph<PlanMaint, EWQCPlan> {
     #region selects
     public PXSetup<EWPMSetup> EwPMSetup;
 
-    public PXSelect<EWPMFormulaOper,
-                  Where<EWPMFormulaOper.formulaID, Equal<Current<EWPMFormula.formulaID>>,
-                      And<EWPMFormulaOper.revisionNo, Equal<Current<EWPMFormula.revisionNo>>>>,
-                  OrderBy<Asc<EWPMFormulaOper.operationCD>>> FormulaOperRecords;
+    public PXSelect<
+      EWPMFormulaOper,
+      Where<EWPMFormulaOper.formulaID, Equal<Current<EWPMFormula.formulaID>>,
+        And<EWPMFormulaOper.revisionNo, Equal<Current<EWPMFormula.revisionNo>>>>,
+      OrderBy<
+        Asc<EWPMFormulaOper.operationCD>>> 
+      FormulaOperRecords;
+
+    public PXSelect<
+      EWPMFormulaMatl, 
+      Where<EWPMFormulaMatl.formulaID, Equal<Current<EWPMFormulaOper.formulaID>>, 
+        And<EWPMFormulaMatl.revisionNo, Equal<Current<EWPMFormulaOper.revisionNo>>, 
+        And<EWPMFormulaMatl.operationID, Equal<Current<EWPMFormulaOper.operationID>>>>>, 
+      OrderBy<
+        Asc<EWPMFormulaMatl.sortOrder, 
+        Asc<EWPMFormulaMatl.lineID>>>> 
+      FormulaMatlRecords;
 
     #endregion
 
