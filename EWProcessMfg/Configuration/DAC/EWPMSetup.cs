@@ -44,7 +44,7 @@ namespace EW.PM {
 
         // [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
         [PXUIField(DisplayName = "System Weight")]
-        [PXSelector(typeof(Search<INUnit.fromUnit>), typeof(INUnit.fromUnit), SubstituteKey = typeof(INUnit.fromUnit))]
+        [PXSelector(typeof(Search4<INUnit.fromUnit, Aggregate<GroupBy<INUnit.fromUnit>>>), typeof(INUnit.fromUnit), SubstituteKey = typeof(INUnit.fromUnit))]
         public virtual string SystemWeightUnit {
             get;
             set;
@@ -54,7 +54,7 @@ namespace EW.PM {
         }
         [PXDBString(10, IsUnicode = true)]
         [PXUIField(DisplayName = "System Volumn")]
-        [PXSelector(typeof(Search<INUnit.toUnit, Where<INUnit.fromUnit, Equal<Current<systemWeightUnit>>>>), typeof(INUnit.toUnit), SubstituteKey = typeof(INUnit.toUnit))]
+        [PXSelector(typeof(Search4<INUnit.toUnit, Where<INUnit.fromUnit, Equal<Current<systemWeightUnit>>>, Aggregate<GroupBy<INUnit.toUnit>>>), typeof(INUnit.toUnit), SubstituteKey = typeof(INUnit.toUnit))]
         public virtual string SystemVolumeUnit {
             get;
             set;
