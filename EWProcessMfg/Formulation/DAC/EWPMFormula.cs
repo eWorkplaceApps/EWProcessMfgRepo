@@ -244,6 +244,23 @@ namespace EW.PM
     }
     #endregion
 
+    #region LineCntrOperation
+    public abstract class lineCntrOperation:PX.Data.BQL.BqlInt.Field<lineCntrOperation> {
+    }
+    protected int? _LineCntrOperation;
+    [PXDBInt]
+    [PXDefault(0)]
+    [PXUIField(DisplayName = "Operation Line Cntr", Enabled = false, Visible = false)]
+    public virtual int? LineCntrOperation {
+      get {
+        return this._LineCntrOperation;
+      }
+      set {
+        this._LineCntrOperation = value;
+      }
+    }
+    #endregion
+
     #region Details
 
     #region FormulaClassID

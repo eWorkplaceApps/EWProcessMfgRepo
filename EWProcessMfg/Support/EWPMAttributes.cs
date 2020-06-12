@@ -114,5 +114,11 @@ namespace EW.PM {
     public class RevisionAttribute:AcctSubAttribute {
 
     }
+
+  [PXDBInt]
+  [PXUIField(DisplayName = "Operation ID")]
+  public class OperationIDFieldAttribute:AcctSubAttribute {
+
   }
+}
 

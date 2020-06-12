@@ -27,7 +27,11 @@ namespace EW.PM {
     //public class PlanMaint:PXGraph<PlanMaint, EWQCPlan> {
     #region selects
     public PXSetup<EWPMSetup> EwPMSetup;
-   
+
+    public PXSelect<EWPMFormulaOper,
+                  Where<EWPMFormulaOper.formulaID, Equal<Current<EWPMFormula.formulaID>>,
+                      And<EWPMFormulaOper.revisionNo, Equal<Current<EWPMFormula.revisionNo>>>>,
+                  OrderBy<Asc<EWPMFormulaOper.operationCD>>> FormulaOperRecords;
 
     #endregion
 
@@ -47,6 +51,9 @@ namespace EW.PM {
     }
     #endregion
 
+    #region Operation Events
+   
+    #endregion
 
     #region Override code
     public override bool CanCreateNewRevision(EWPMFormulaMaint fromGraph, EWPMFormulaMaint toGraph, string keyValue,
