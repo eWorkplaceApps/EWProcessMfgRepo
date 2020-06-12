@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Formulation\DAC\EWPMBoilerplateGroup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateGroupMaint.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaOper.cs" />
+    <Compile Include="Configuration\DAC\EWPMFormulaClassMaint.cs" />
     <Compile Include="Support\UIMessages.cs" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
