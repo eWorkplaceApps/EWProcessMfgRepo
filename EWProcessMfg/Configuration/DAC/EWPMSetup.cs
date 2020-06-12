@@ -60,7 +60,16 @@ namespace EW.PM {
             set;
         }
 
+        #region NoteID
 
+        [PXNote()]
+        public virtual Guid? Noteid {
+            get; set;
+        }
+        public abstract class noteid:PX.Data.BQL.BqlGuid.Field<noteid> {
+        }
+
+        #endregion
 
         #region System Fields
 
