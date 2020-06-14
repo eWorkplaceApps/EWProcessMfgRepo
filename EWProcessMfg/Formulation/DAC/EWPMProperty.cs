@@ -34,7 +34,7 @@ namespace EW.PM
     protected int? _ProprtyID;
     [PXDBIdentity()]
     [PXReferentialIntegrityCheck]
-    public virtual int? ProprtyGroupID
+    public virtual int? ProprtyID
     {
       get
       {
