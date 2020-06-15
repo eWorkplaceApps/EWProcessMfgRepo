@@ -2,8 +2,8 @@
 * Unauthorized copying of this file, via any medium is strictly prohibited
 * Proprietary and confidential
 *
-* Author: Asha Sharda
-* Date: 1 June 2020
+* Author: Amit Mundra
+* Date: 11 June 2020
 *
 *Last Updated By :
 *Last Updated Date:
@@ -13,62 +13,87 @@
 */
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using PX.Data;
-using PX.Objects.CS;
-using PX.Objects.IN;
+using PX.Data.ReferentialIntegrity.Attributes;
 
 namespace EW.PM {
 
-
     [System.SerializableAttribute()]
-    [PXPrimaryGraph(typeof(EWPMSetupMaint))]
-    public class EWPMSetup:PX.Data.IBqlTable {
+    public class EWPMBiolerplate:PX.Data.IBqlTable {
 
-
-
-
-        public abstract class formulaNumberSequenceID:PX.Data.IBqlField {
+        #region BoilerplateID
+        public abstract class boilerplateID:PX.Data.BQL.BqlInt.Field<boilerplateID> {
+        }
+        protected int? _BoilerplateID;
+        [PXDBIdentity()]
+        [PXReferentialIntegrityCheck]
+        public virtual int? BoilerplateID {
+            get {
+                return this._BoilerplateID;
+            }
+            set {
+                this._BoilerplateID = value;
+            }
         }
 
-        [PXDBString(10, IsUnicode = true)]
-        [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
-        [PXUIField(DisplayName = "Formula Numbering Sequence")]
-        public virtual string FormulaNumberSequenceID {
-            get;
-            set;
+        #endregion
+
+        #region BoilerplateCD
+
+        public abstract class boilerplateCD:PX.Data.IBqlField {
+        }
+        protected string _BoilerplateCD;
+        [ID(IsKey = true, Required = true)]
+        [PXDefault]
+        [PXUIField(DisplayName = "ID")]
+        public virtual string BoilerplateCD {
+            get {
+                return this._BoilerplateCD;
+            }
+            set {
+                this._BoilerplateCD = value;
+            }
         }
 
-        public abstract class systemWeightUnit:PX.Data.IBqlField {
-        }
-        [PXDBString(10, IsUnicode = true)]
+        #endregion
 
-        // [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
-        [PXUIField(DisplayName = "System Weight")]
-        [PXSelector(typeof(Search4<INUnit.fromUnit, Aggregate<GroupBy<INUnit.fromUnit>>>), typeof(INUnit.fromUnit), SubstituteKey = typeof(INUnit.fromUnit))]
-        public virtual string SystemWeightUnit {
-            get;
-            set;
+        #region Description
+        public abstract class description:PX.Data.IBqlField {
         }
+        protected string _Description;
+        [PXDBString(255, IsUnicode = true)]
+        [PXUIField(DisplayName = "Description")]
+        public virtual string Description {
+            get {
+                return this._Description;
+            }
+            set {
+                this._Description = value;
+            }
+        }
+        #endregion
 
-        public abstract class systemVolumeUnit:PX.Data.IBqlField {
+        #region BoilerplateGroupID
+        public abstract class boilerplateGroupID:PX.Data.BQL.BqlInt.Field<boilerplateGroupID> {
         }
-        [PXDBString(10, IsUnicode = true)]
-        [PXUIField(DisplayName = "System Volumn")]
-        [PXSelector(typeof(Search4<INUnit.toUnit, Where<INUnit.fromUnit, Equal<Current<systemWeightUnit>>>, Aggregate<GroupBy<INUnit.toUnit>>>), typeof(INUnit.toUnit), SubstituteKey = typeof(INUnit.toUnit))]
-        public virtual string SystemVolumeUnit {
-            get;
-            set;
+        protected int? _BoilerplateGroupID;
+        [PXDBInt()]
+        [PXUIField(DisplayName = "Boilerplate Group")]
+        [PXDefault(PersistingCheck = PXPersistingCheck.NullOrBlank)]
+        [PXSelector(typeof(Search<EWPMBoilerplateGroup.boilerplateGroupID>), typeof(EWPMBoilerplateGroup.name), typeof(EWPMBoilerplateGroup.description), SubstituteKey = typeof(EWPMBoilerplateGroup.name))]
+        [PXForeignReference(typeof(Field<boilerplateGroupID>.IsRelatedTo<EWPMBoilerplateGroup.boilerplateGroupID>))]
+        public virtual int? BoilerplateGroupID {
+            get {
+                return this._BoilerplateGroupID;
+            }
+            set {
+                this._BoilerplateGroupID = value;
+            }
         }
-
-        #region NoteID
-
-        [PXNote()]
-        public virtual Guid? Noteid {
-            get; set;
-        }
-        public abstract class noteid:PX.Data.BQL.BqlGuid.Field<noteid> {
-        }
-
         #endregion
 
         #region System Fields
@@ -181,5 +206,6 @@ namespace EW.PM {
         #endregion
 
         #endregion
+
     }
 }
