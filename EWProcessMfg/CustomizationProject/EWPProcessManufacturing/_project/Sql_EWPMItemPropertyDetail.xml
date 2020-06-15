@@ -1,0 +1,22 @@
+﻿<Sql TableName="EWPMItemPropertyDetail" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMItemPropertyDetail">
+  <col name="ItemPropertyDetailID" type="Int" identity="true" />
+  <col name="ItemPropertyID" type="Int" />
+  <col name="PropertyLineNbr" type="Int" />
+  <col name="PropertyID" type="Int" />
+  <col name="PropertyValue" type="NVarChar(1000)" nullable="true" />
+  <col name="GroupLineNbr" type="Int" />
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_EWPMItemPropertyDetail" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ItemPropertyDetailID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

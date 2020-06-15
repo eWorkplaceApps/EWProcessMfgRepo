@@ -25,13 +25,16 @@
         </layout>
         <data>
             <SiteMap>
-                <row Title="Formula" Url="~/Pages/EW/EM/EM201000.aspx" ScreenID="EM201000" NodeID="c21738a3-722e-4a87-9519-944cda0a712b" ParentID="00000000-0000-0000-0000-000000000000">
-                    <MUIScreen IsPortal="0" WorkspaceID="a8c4b89b-f606-487e-b605-2334d514fba1" Order="40" SubcategoryID="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa" />
+                <row Title="Item Property" Url="~/Pages/EW/EM/EM201200.aspx" ScreenID="EM201200" NodeID="bf3a9f43-d77b-4b61-8643-04b37a7fc9de" ParentID="00000000-0000-0000-0000-000000000000">
+                    <MUIScreen IsPortal="0" WorkspaceID="c57f5e08-3ab2-48d6-9ca1-7e8165117329" Order="30" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea" />
                 </row>
             </SiteMap>
             <MUIWorkspace>
-                <row IsPortal="0" WorkspaceID="a8c4b89b-f606-487e-b605-2334d514fba1" Order="865" Title="Quality Control" Icon="approval" IsSystem="0" />
+                <row IsPortal="0" WorkspaceID="c57f5e08-3ab2-48d6-9ca1-7e8165117329" Order="875" Title="Process Manufacturing" Icon="apps" IsSystem="0" />
             </MUIWorkspace>
+            <MUISubcategory>
+                <row IsPortal="0" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea" Order="128" Name="Profiles" Icon="" IsSystem="0" />
+            </MUISubcategory>
         </data>
     </data-set>
 </SiteMapNode>

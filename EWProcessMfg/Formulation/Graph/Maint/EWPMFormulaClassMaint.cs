@@ -21,12 +21,12 @@ namespace EW.PM
     public PXSelect<EWPMFormulaClass> FormulaClasses;
 
     
-    protected virtual void _(Events.FieldVerifying<EWPMFormulaClass, EWPMFormulaClass.description> e)
-    {
-      if (string.IsNullOrEmpty(Convert.ToString( e.NewValue))){
-        e.Cache.RaiseExceptionHandling<EWPMFormulaClass.description>(e.Row, e.NewValue, new PXSetPropertyException("Filed is required", PXErrorLevel.Error));
-      }
-    }
+    //protected virtual void _(Events.FieldVerifying<EWPMFormulaClass, EWPMFormulaClass.description> e)
+    //{
+    //  if (string.IsNullOrEmpty(Convert.ToString( e.NewValue))){
+    //    e.Cache.RaiseExceptionHandling<EWPMFormulaClass.description>(e.Row, e.NewValue, new PXSetPropertyException("Filed is required", PXErrorLevel.Error));
+    //  }
+    //}
 
     protected virtual void _(Events.RowPersisting<EWPMFormulaClass> e)
     {

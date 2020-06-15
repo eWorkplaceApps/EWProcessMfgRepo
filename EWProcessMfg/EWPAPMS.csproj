@@ -56,28 +56,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
+      <DependentUpon>EM101000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
+      <DependentUpon>EM201000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201100.aspx.cs">
+      <DependentUpon>EM201100.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx.cs">
+      <DependentUpon>EM201200.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx.cs">
+      <DependentUpon>EM201300.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201400.aspx.cs">
+      <DependentUpon>EM201400.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx.cs">
+      <DependentUpon>EM201500.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulation\DAC\EWPMBiolerplate.cs" />
     <Compile Include="Formulation\DAC\EWPMBoilerplateGroup.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaOhvd.cs" />
     <Compile Include="Formulation\DAC\EWPMProperty.cs" />
     <Compile Include="Formulation\DAC\EWPMPropertyGroup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateGroupMaint.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaOper.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaClass.cs" />
     <Compile Include="Formulation\DAC\EWPMItemProperty.cs" />
     <Compile Include="Formulation\DAC\EWPMItemPropertyDetail.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaClassMaint.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMItemPropertyMaint.cs" />
-	<Compile Include="Formulation\Graph\Maint\EWPMBiolerplateMaint.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaOhvd.cs" />
+    <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateMaint.cs" />
     <Compile Include="Support\UIMessages.cs" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
-      <DependentUpon>EM101000.aspx</DependentUpon>
-    </Content>
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
-      <DependentUpon>EM201000.aspx</DependentUpon>
-    </Content>
-    <Compile Include="Examples.cs" />
     <Compile Include="Formulation\DAC\EWPMFormula.cs" />
     <Compile Include="Configuration\DAC\EWPMSetup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaMaint.cs" />
@@ -90,16 +104,35 @@
     <Folder Include="Laboratory\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_c21738a3_722e_4a87_9519_944cda0a712b.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_e3925fd9_b8c8_4e2d_8338_ee96670b9375.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormula.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOper.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMSetup.xml" />
+    <None Include="CustomFields.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CustomFields.config" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201100.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201400.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\ProjectMetadata.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_1de3d5d1_5be9_45b3_a438_22db61b06159.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_454fb1ab_30d4_4a5a_ad85_32f09b90fa65.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_bf3a9f43_d77b_4b61_8643_04b37a7fc9de.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_c21738a3_722e_4a87_9519_944cda0a712b.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_ce5faf88_85fb_4ace_aa17_d06db7682ac1.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_d9bb1516_74ca_447f_9ccf_e7f4898791ff.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_e3925fd9_b8c8_4e2d_8338_ee96670b9375.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMBiolerplate.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMBoilerplateGroup.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormula.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaClass.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOper.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMItemProperty.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMItemPropertyDetail.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMProperty.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMPropertyGroup.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMSetup.xml" />
+    <Content Include="EWProcessMfg.csproj.user" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
