@@ -39,17 +39,17 @@ namespace EW.PM {
             EWPMBiolerplate line = (EWPMBiolerplate)e.Row;
             if(e.Operation != PXDBOperation.Delete) {
                 if(string.IsNullOrEmpty(line.BoilerplateCD)) {
-                    throw new PXRowPersistingException("BoilerplateCD",
+                    throw new PXRowPersistingException(UIMessages.BoilerplateCDFieldName,
                             null,
                             ErrorMessages.FieldIsEmpty,
-                            "ID");
+                            UIMessages.CommonCD);
                 }
 
                 if(!line.BoilerplateGroupID.HasValue) {
-                    throw new PXRowPersistingException("BoilerplateGroupID",
+                    throw new PXRowPersistingException(UIMessages.BoilerplateGroupFieldName,
                             null,
                             ErrorMessages.FieldIsEmpty,
-                            "Boilerplate GroupID");
+                            UIMessages.BoilerplateGroupFieldDisplayName);
                 }
             }
         }
