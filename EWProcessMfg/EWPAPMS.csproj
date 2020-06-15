@@ -56,27 +56,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
+    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
       <DependentUpon>EM201000.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201100.aspx.cs">
+    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201100.aspx.cs">
       <DependentUpon>EM201100.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx.cs">
+    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx.cs">
       <DependentUpon>EM201200.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx.cs">
+    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx.cs">
       <DependentUpon>EM201300.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201400.aspx.cs">
+    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201400.aspx.cs">
       <DependentUpon>EM201400.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx.cs">
+    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx.cs">
       <DependentUpon>EM201500.aspx</DependentUpon>
-    </Compile>
+    </Content>
     <Compile Include="Formulation\DAC\EWPMBiolerplate.cs" />
     <Compile Include="Formulation\DAC\EWPMBoilerplateGroup.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
@@ -90,8 +90,8 @@
     <Compile Include="Formulation\DAC\EWPMItemPropertyDetail.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaClassMaint.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMItemPropertyMaint.cs" />
-	<Compile Include="Formulation\Graph\Maint\EWPMBiolerplateMaint.cs" />
-<Compile Include="Formulation\Graph\Maint\EWPMPropertyGroupMaint.cs" />
+    <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateMaint.cs" />
+    <Compile Include="Formulation\Graph\Maint\EWPMPropertyGroupMaint.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMPropertyMaint.cs" />
     <Compile Include="Support\UIMessages.cs" />
     <Compile Include="Formulation\DAC\EWPMFormula.cs" />
