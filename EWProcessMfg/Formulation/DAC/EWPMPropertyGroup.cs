@@ -46,6 +46,7 @@ namespace EW.PM
       }
     }
 
+    #endregion ProprtyGroupID
 
     #region SequenceNo
     public abstract class sequenceNo : PX.Data.BQL.BqlString.Field<sequenceNo>
