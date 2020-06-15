@@ -57,7 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Formulation\DAC\EWPMFormulaOper.cs" />
-    <Compile Include="Configuration\DAC\EWPMFormulaClassMaint.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaClass.cs" />
+    <Compile Include="Formulation\DAC\EWPMItemProperty.cs" />
+    <Compile Include="Formulation\DAC\EWPMItemPropertyDetail.cs" />
+    <Compile Include="Formulation\Graph\Maint\EWPMFormulaClassMaint.cs" />
+    <Compile Include="Formulation\Graph\Maint\EWPMItemPropertyMaint.cs" />
     <Compile Include="Support\UIMessages.cs" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
