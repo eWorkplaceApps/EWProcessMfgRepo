@@ -1,6 +1,7 @@
-﻿<Sql TableName="EWPMSetup" TableSchemaXml="#CDATA">
-    <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMSetup">
-  <col name="FormulaNumberSequenceID" type="NVarChar(10)" nullable="true" />
+﻿<Sql TableName="EWPMItemProperty" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMItemProperty">
+  <col name="ItemPropertyID" type="Int" identity="true" />
+  <col name="InventoryID" type="NVarChar(50)" />
   <col name="CompanyID" type="Int" default="Zero" />
   <col name="CreatedDateTime" type="DateTime" />
   <col name="CreatedByScreenID" type="Char(8)" />
@@ -9,10 +10,9 @@
   <col name="LastModifiedByScreenID" type="Char(8)" />
   <col name="LastModifiedByID" type="UniqueIdentifier" />
   <col name="tstamp" type="Timestamp" />
-  <col name="SystemWeightUnit" type="NVarChar(10)" nullable="true" />
-  <col name="SystemVolumeUnit" type="NVarChar(10)" nullable="true" />
-  <index name="PK_EWPMSetup" clustered="true" primary="true" unique="true">
+  <index name="PK_EWPMItemProperty" clustered="true" primary="true" unique="true">
     <col name="CompanyID" />
+    <col name="ItemPropertyID" />
   </index>
 </table>]]></CDATA>
 </Sql>

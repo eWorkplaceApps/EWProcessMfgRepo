@@ -13,7 +13,7 @@ namespace EW.PM
 
     public PXSelect<EWPMItemProperty> ItemProperty;
     public PXSelect<EWPMItemPropertyDetail> ItemPropertyDetails;
-    public PXSelect<InventoryItem, Where<InventoryItem.inventoryID, Equal<Current<EWPMItemProperty.inventoryID>>>> InventoryItemQuery;
+    public PXSelect<InventoryItem, Where<InventoryItem.inventoryID, Equal<Required<EWPMItemProperty.inventoryID>>>> SelectInventoryItem;
 
     #endregion Data Views
 
@@ -22,7 +22,7 @@ namespace EW.PM
     protected virtual void  _(Events.FieldUpdated<EWPMItemProperty, EWPMItemProperty.inventoryID> e)
     {
       
-      InventoryItem result = InventoryItemQuery.Select(e.Row.InventoryID);
+      InventoryItem result = SelectInventoryItem.Select(e.Row.InventoryID);
 
       if (result != null)
       {

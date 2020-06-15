@@ -1,6 +1,8 @@
-﻿<Sql TableName="EWPMSetup" TableSchemaXml="#CDATA">
-    <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMSetup">
-  <col name="FormulaNumberSequenceID" type="NVarChar(10)" nullable="true" />
+﻿<Sql TableName="EWPMFormulaClass" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMFormulaClass">
+  <col name="FormulaClassID" type="Int" identity="true" />
+  <col name="FormulaClassCD" type="NVarChar(50)" />
+  <col name="Description" type="NVarChar(255)" nullable="true" />
   <col name="CompanyID" type="Int" default="Zero" />
   <col name="CreatedDateTime" type="DateTime" />
   <col name="CreatedByScreenID" type="Char(8)" />
@@ -9,10 +11,9 @@
   <col name="LastModifiedByScreenID" type="Char(8)" />
   <col name="LastModifiedByID" type="UniqueIdentifier" />
   <col name="tstamp" type="Timestamp" />
-  <col name="SystemWeightUnit" type="NVarChar(10)" nullable="true" />
-  <col name="SystemVolumeUnit" type="NVarChar(10)" nullable="true" />
-  <index name="PK_EWPMSetup" clustered="true" primary="true" unique="true">
+  <index name="PK_EWPMFormulaClass" clustered="true" primary="true" unique="true">
     <col name="CompanyID" />
+    <col name="FormulaClassID" />
   </index>
 </table>]]></CDATA>
 </Sql>
