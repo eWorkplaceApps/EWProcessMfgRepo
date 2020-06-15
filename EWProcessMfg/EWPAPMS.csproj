@@ -61,6 +61,7 @@
     <Compile Include="Formulation\DAC\EWPMProperty.cs" />
     <Compile Include="Formulation\DAC\EWPMPropertyGroup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateGroupMaint.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaOper.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaClass.cs" />
     <Compile Include="Formulation\DAC\EWPMItemProperty.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaClassMaint.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMItemPropertyMaint.cs" />
 	<Compile Include="Formulation\Graph\Maint\EWPMBiolerplateMaint.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaOhvd.cs" />
     <Compile Include="Support\UIMessages.cs" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
@@ -93,6 +95,7 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_c21738a3_722e_4a87_9519_944cda0a712b.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_e3925fd9_b8c8_4e2d_8338_ee96670b9375.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormula.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOper.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMSetup.xml" />
   </ItemGroup>
   <ItemGroup>

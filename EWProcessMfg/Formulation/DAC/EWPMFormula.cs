@@ -27,14 +27,22 @@ namespace EW.PM
   [PXPrimaryGraph(typeof(EWPMFormulaMaint))]
   public class EWPMFormula : PX.Data.IBqlTable
 	{
-		#region FormulaID
+	
+		#region FormulaCD
 		public abstract class formulaID : PX.Data.IBqlField
 		{
 		}
-		protected int? _FormulaID;
-    [PXDBIdentity()]
-    [PXReferentialIntegrityCheck]
-    public virtual int? FormulaID
+		protected string _FormulaID;
+    [ID(IsKey = true, Required = true,DisplayName ="Formula ID")]
+    [PXDefault]
+    [Rev.Key(typeof(EWPMSetup.formulaNumberSequenceID),
+                 typeof(formulaID),
+                 typeof(revisionNo),
+                 typeof(formulaID),
+                 typeof(revisionNo),
+                  typeof(description)
+                 )]
+    public virtual string FormulaID
 		{
 			get
 			{
@@ -46,32 +54,6 @@ namespace EW.PM
 			}
 		}
 		#endregion
-		#region FormulaCD
-		public abstract class formulaCD : PX.Data.IBqlField
-		{
-		}
-		protected string _FormulaCD;
-    [ID(IsKey = true, Required = true)]
-    [PXDefault]
-    [Rev.Key(typeof(EWPMSetup.formulaNumberSequenceID),
-                 typeof(formulaCD),
-                 typeof(revisionNo),
-                 typeof(formulaCD),
-                 typeof(revisionNo),
-                  typeof(description)
-                 )]
-    public virtual string FormulaCD
-		{
-			get
-			{
-				return this._FormulaCD;
-			}
-			set
-			{
-				this._FormulaCD = value;
-			}
-		}
-		#endregion
 		#region RevisionNo
 		public abstract class revisionNo : PX.Data.IBqlField
 		{
@@ -80,7 +62,7 @@ namespace EW.PM
     [Revision(IsKey = true, Required = true)]
     [PXDefault("A")]
     [Rev.ID(typeof(defaultRevisionNo),
-             typeof(formulaCD),
+             typeof(formulaID),
              typeof(revisionNo),
              typeof(revisionNo),
              typeof(description),
@@ -157,8 +139,6 @@ namespace EW.PM
 			}
 		}
     #endregion
-    
-
     #region RMCostMethod
     public abstract class rMCostMethod:PX.Data.IBqlField {
     }
@@ -191,7 +171,6 @@ namespace EW.PM
       }
     }
     #endregion
-
     #region EffectiveFromDate
     public abstract class effectiveFromDate:PX.Data.IBqlField {
     }
