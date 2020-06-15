@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaOper.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaOhvd.cs" />
     <Compile Include="Support\UIMessages.cs" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>

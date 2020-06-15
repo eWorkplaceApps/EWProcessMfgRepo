@@ -139,8 +139,6 @@ namespace EW.PM
 			}
 		}
     #endregion
-    
-
     #region RMCostMethod
     public abstract class rMCostMethod:PX.Data.IBqlField {
     }
@@ -173,7 +171,6 @@ namespace EW.PM
       }
     }
     #endregion
-
     #region EffectiveFromDate
     public abstract class effectiveFromDate:PX.Data.IBqlField {
     }
