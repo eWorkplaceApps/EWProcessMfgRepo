@@ -2,8 +2,8 @@
 * Unauthorized copying of this file, via any medium is strictly prohibited
 * Proprietary and confidential
 *
-* Author: Asha Sharda
-* Date: 1 June 2020
+* Author: Amit Mundra
+* Date: 11 June 2020
 *
 *Last Updated By :
 *Last Updated Date:
@@ -13,62 +13,64 @@
 */
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using PX.Data;
-using PX.Objects.CS;
-using PX.Objects.IN;
+using PX.Data.ReferentialIntegrity.Attributes;
 
 namespace EW.PM {
 
-
     [System.SerializableAttribute()]
-    [PXPrimaryGraph(typeof(EWPMSetupMaint))]
-    public class EWPMSetup:PX.Data.IBqlTable {
+    public class EWPMBoilerplateGroup:PX.Data.IBqlTable {
 
-
-
-
-        public abstract class formulaNumberSequenceID:PX.Data.IBqlField {
+        #region TestMethodID
+        public abstract class boilerplateGroupID:PX.Data.BQL.BqlInt.Field<boilerplateGroupID> {
+        }
+        protected int? _BoilerplateGroupID;
+        [PXDBIdentity()]
+        [PXReferentialIntegrityCheck]
+        public virtual int? BoilerplateGroupID {
+            get {
+                return this._BoilerplateGroupID;
+            }
+            set {
+                this._BoilerplateGroupID = value;
+            }
         }
 
-        [PXDBString(10, IsUnicode = true)]
-        [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
-        [PXUIField(DisplayName = "Formula Numbering Sequence")]
-        public virtual string FormulaNumberSequenceID {
-            get;
-            set;
+        #endregion
+        #region Name
+        public abstract class name:PX.Data.BQL.BqlString.Field<name> {
         }
-
-        public abstract class systemWeightUnit:PX.Data.IBqlField {
+        protected string _Name;
+        [PXDBString(50, IsKey = true, IsUnicode = true, InputMask = "")]
+        [PXDefault()]
+        [PXUIField(DisplayName = "Boilerplate Group")]
+        public virtual string Name {
+            get {
+                return this._Name;
+            }
+            set {
+                this._Name = value;
+            }
         }
-        [PXDBString(10, IsUnicode = true)]
-
-        // [PXSelector(typeof(Numbering.numberingID), DescriptionField = typeof(Numbering.descr))]
-        [PXUIField(DisplayName = "System Weight")]
-        [PXSelector(typeof(Search4<INUnit.fromUnit, Aggregate<GroupBy<INUnit.fromUnit>>>), typeof(INUnit.fromUnit), SubstituteKey = typeof(INUnit.fromUnit))]
-        public virtual string SystemWeightUnit {
-            get;
-            set;
+        #endregion
+        #region Description
+        public abstract class description:PX.Data.IBqlField {
         }
-
-        public abstract class systemVolumeUnit:PX.Data.IBqlField {
+        protected string _Description;
+        [PXDBString(255, IsUnicode = true)]
+        [PXUIField(DisplayName = "Description")]
+        public virtual string Description {
+            get {
+                return this._Description;
+            }
+            set {
+                this._Description = value;
+            }
         }
-        [PXDBString(10, IsUnicode = true)]
-        [PXUIField(DisplayName = "System Volumn")]
-        [PXSelector(typeof(Search4<INUnit.toUnit, Where<INUnit.fromUnit, Equal<Current<systemWeightUnit>>>, Aggregate<GroupBy<INUnit.toUnit>>>), typeof(INUnit.toUnit), SubstituteKey = typeof(INUnit.toUnit))]
-        public virtual string SystemVolumeUnit {
-            get;
-            set;
-        }
-
-        #region NoteID
-
-        [PXNote()]
-        public virtual Guid? Noteid {
-            get; set;
-        }
-        public abstract class noteid:PX.Data.BQL.BqlGuid.Field<noteid> {
-        }
-
         #endregion
 
         #region System Fields
@@ -181,5 +183,6 @@ namespace EW.PM {
         #endregion
 
         #endregion
+
     }
 }

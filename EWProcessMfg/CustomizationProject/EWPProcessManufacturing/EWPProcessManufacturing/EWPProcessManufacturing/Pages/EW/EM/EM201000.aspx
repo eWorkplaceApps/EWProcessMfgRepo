@@ -47,7 +47,7 @@
 			<px:PXTabItem Text="Details" BindingContext="form" > <Template>
                 <px:PXFormView ID="formN" runat="server" DataSourceID="ds" DataMember="Documents" CaptionVisible="False" SkinID="Transparent" MarkRequired="Dynamic">
                         <Template>
-                            <px:PXLayoutRule runat="server" ControlSize="XM"  StartColumn="True" ></px:PXLayoutRule>
+                            <px:PXLayoutRule runat="server" ControlSize="XM" LabelsWidth="S" StartColumn="True" ></px:PXLayoutRule>
                  <px:PXSelector ID="edFormulaClassID" runat="server" AlreadyLocalized="False" DataField="FormulaClassID" CommitChanges="True">
                  </px:PXSelector>
                 <px:PXSelector ID="edFormulaPolicyID" runat="server" AlreadyLocalized="False" DataField="FormulaPolicyID" CommitChanges="True">
