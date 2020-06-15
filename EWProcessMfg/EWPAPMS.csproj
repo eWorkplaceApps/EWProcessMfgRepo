@@ -69,6 +69,7 @@
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaClassMaint.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMItemPropertyMaint.cs" />
 	<Compile Include="Formulation\Graph\Maint\EWPMBiolerplateMaint.cs" />
+    <Compile Include="Formulation\DAC\EWPMFormulaOhvd.cs" />
     <Compile Include="Support\UIMessages.cs" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>

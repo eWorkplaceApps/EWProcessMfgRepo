@@ -26,7 +26,7 @@ namespace EW.PM {
   public class EWPMFormulaMaint:PXRevisionableGraph<EWPMFormulaMaint, EWPMFormula, EWPMFormula.formulaID, EWPMFormula.revisionNo> {
     //public class PlanMaint:PXGraph<PlanMaint, EWQCPlan> {
     #region selects
-    public PXSetup<EWPMSetup> EwPMSetup;
+    public PXSetup<EWPMSetup> Setup;
 
     public PXSelect<
       EWPMFormulaOper,
@@ -49,7 +49,7 @@ namespace EW.PM {
     #endregion
 
     public EWPMFormulaMaint() {
-      EWPMSetup setup = EwPMSetup.Current;
+      EWPMSetup setup = Setup.Current;
     }
 
     #region Formula Events
