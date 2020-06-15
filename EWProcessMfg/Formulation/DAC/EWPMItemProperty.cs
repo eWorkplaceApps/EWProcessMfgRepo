@@ -1,29 +1,43 @@
 ﻿using System;
 using PX.Data;
+using PX.Objects.IN;
 
-namespace EW.PM.Configuration
+namespace EW.PM
 {
   [Serializable]
-  [PXCacheName("EWPMFormulaClass")]
-  public class EWPMFormulaClass : IBqlTable
+  [PXCacheName("EWPMItemProperty")]
+  public class EWPMItemProperty : IBqlTable
   {
-    #region FormulaClassID
+    #region ItemPropertyID
     [PXDBIdentity(IsKey = true)]
-    public virtual int? FormulaClassID { get; set; }
-    public abstract class formulaClassID : PX.Data.BQL.BqlInt.Field<formulaClassID> { }
+    public virtual int? ItemPropertyID { get; set; }
+    public abstract class itemPropertyID : PX.Data.BQL.BqlInt.Field<itemPropertyID> { }
     #endregion
 
-    #region Name
-    [PXDBString(200, IsUnicode = true, InputMask = "")]
-    [PXUIField(DisplayName = "Name")]
-    public virtual string Name { get; set; }
-    public abstract class name : PX.Data.BQL.BqlString.Field<name> { }
+    #region InventoryID
+    [PXDBString(50, IsUnicode = true, InputMask = "")]
+    [PXUIField(DisplayName = "Inventory ID")]
+    // [PXSelector(typeof(Search2<InventoryItem.inventoryID,
+    // InnerJoin<EWQCInventoryDetail,
+    // On<EWQCInventoryDetail.inventoryID,
+    // Equal<InventoryItem.inventoryID>, And<EWQCInventoryDetail.adhocQC,
+    //Equal<True>>>>>), new Type[] { typeof(InventoryItem.inventoryCD), typeof(InventoryItem.descr) },
+    // SubstituteKey = typeof(InventoryItem.inventoryCD))]
+    [PXSelector(typeof(InventoryItem.inventoryID),
+             typeof(InventoryItem.inventoryID),
+             typeof(InventoryItem.descr)
+             )]
+    public virtual string InventoryID { get; set; }
+    public abstract class inventoryID : PX.Data.BQL.BqlString.Field<inventoryID> { }
     #endregion
 
     #region Description
-    [PXDBString(255, IsUnicode = true, InputMask = "")]
+
+    [PXString(500, IsUnicode = true, InputMask = "")]
     [PXUIField(DisplayName = "Description")]
-    public virtual string Description { get; set; }
+    public virtual string Description {
+      get; set;
+    }
     public abstract class description : PX.Data.BQL.BqlString.Field<description> { }
     #endregion
 
