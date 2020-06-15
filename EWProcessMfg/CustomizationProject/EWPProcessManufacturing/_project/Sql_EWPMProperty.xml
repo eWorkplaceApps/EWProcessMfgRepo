@@ -1,0 +1,23 @@
+﻿<Sql TableName="EWPMProperty" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMProperty">
+  <col name="ProprtyID" type="Int" identity="true" />
+  <col name="sequenceNo" type="NVarChar(10)" />
+  <col name="Description" type="NVarChar(100)" nullable="true" />
+  <col name="Type" type="NVarChar(10)" nullable="true" />
+  <col name="TagName" type="NVarChar(255)" nullable="true" />
+  <col name="Factor" type="Int" />
+  <col name="PropertyUnit" type="NVarChar(100)" nullable="true" />
+  <col name="Group" type="NVarChar(10)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_EWPMProperty" clustered="true" primary="true" unique="true">
+    <col name="ProprtyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>
