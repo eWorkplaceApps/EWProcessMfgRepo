@@ -26,7 +26,7 @@ namespace EW.PM {
 
         public PXSave<EWPMBiolerplate> Save;
 
-        public PXSelect<EWPMBiolerplate> BoilerplateGroup;
+        public PXSelect<EWPMBiolerplate> Boilerplates;
 
         #region Events
 

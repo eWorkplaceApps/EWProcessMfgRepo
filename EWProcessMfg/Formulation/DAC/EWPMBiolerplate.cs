@@ -67,6 +67,7 @@ namespace EW.PM {
         protected string _Description;
         [PXDBString(255, IsUnicode = true)]
         [PXUIField(DisplayName = "Description")]
+        [PXDefault(PersistingCheck = PXPersistingCheck.NullOrBlank)]
         public virtual string Description {
             get {
                 return this._Description;
@@ -202,6 +203,15 @@ namespace EW.PM {
             set {
                 this._tstamp = value;
             }
+        }
+        #endregion
+
+        #region NoteID
+        [PXNote()]
+        public virtual Guid? Noteid {
+            get; set;
+        }
+        public abstract class noteid:PX.Data.BQL.BqlGuid.Field<noteid> {
         }
         #endregion
 
