@@ -82,6 +82,10 @@ namespace EW.PM
     [PXUIField(DisplayName = "Tstamp")]
     public virtual byte[] Tstamp { get; set; }
     public abstract class tstamp : PX.Data.BQL.BqlByteArray.Field<tstamp> { }
+
+
+
+
     #endregion
   }
 }
