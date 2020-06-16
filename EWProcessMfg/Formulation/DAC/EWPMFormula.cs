@@ -23,7 +23,7 @@ namespace EW.PM
 {
 	
 	[System.SerializableAttribute()]
-  [PXCacheName("Formula")]
+  [PXCacheName("EWPMFormula")]
   [PXPrimaryGraph(typeof(EWPMFormulaMaint))]
   public class EWPMFormula : PX.Data.IBqlTable
 	{
@@ -259,24 +259,7 @@ namespace EW.PM
       }
     }
     #endregion
-    #region FormulaPolicyID
-
-    public abstract class formulaPolicyID:PX.Data.BQL.BqlInt.Field<formulaPolicyID> {
-    }
-    protected int? _FormulaPolicyID;
-    [PXDBInt()]
-    [PXSelector(typeof(CREmployee.userID), SubstituteKey = typeof(CREmployee.acctName))]
-    [PXUIField(DisplayName = "Formula Policy ID")]
-    public virtual int? FormulaPolicyID {
-      get {
-        return this._FormulaPolicyID;
-      }
-      set {
-        this._FormulaPolicyID = value;
-      }
-    }
-    #endregion
-
+   
     #region Approved By
 
     public abstract class approvedBy:PX.Data.BQL.BqlGuid.Field<approvedBy> {
@@ -312,6 +295,7 @@ namespace EW.PM
       }
     }
     #endregion
+
     #region WarehouseID
     public abstract class defaultRMWarehouse:PX.Data.IBqlField {
     }

@@ -33,7 +33,7 @@ namespace EW.PM {
         And<EWPMFormulaOper.revisionNo, Equal<Current<EWPMFormula.revisionNo>>>>,
       OrderBy<
         Asc<EWPMFormulaOper.operationCD>>> 
-      FormulaOperRecords;
+      FormulaOperations;
 
     public PXSelect<
       EWPMFormulaMatl, 
@@ -43,7 +43,36 @@ namespace EW.PM {
       OrderBy<
         Asc<EWPMFormulaMatl.sortOrder, 
         Asc<EWPMFormulaMatl.lineID>>>> 
-      FormulaMatlRecords;
+      FormulaMaterials;
+
+    public PXSelect<
+          EWPMFormulaByProd,
+          Where<EWPMFormulaByProd.formulaID, Equal<Current<EWPMFormulaOper.formulaID>>,
+            And<EWPMFormulaByProd.revisionNo, Equal<Current<EWPMFormulaOper.revisionNo>>,
+            And<EWPMFormulaByProd.operationID, Equal<Current<EWPMFormulaOper.operationID>>>>>,
+          OrderBy<
+            Asc<EWPMFormulaByProd.sortOrder,
+            Asc<EWPMFormulaByProd.lineID>>>>
+          FormulaByProducts;
+
+    public PXSelectJoin<
+      EWPMFormulaOvhd,
+      InnerJoin<AMOverhead, 
+        On<EWPMFormulaOvhd.ovhdID, Equal<AMOverhead.ovhdID>>>,
+      Where<EWPMFormulaOvhd.formulaID, Equal<Current<EWPMFormulaOper.formulaID>>,
+        And<EWPMFormulaOvhd.revisionNo, Equal<Current<EWPMFormulaOper.revisionNo>>,
+        And<EWPMFormulaOvhd.operationID, Equal<Current<EWPMFormulaOper.operationID>>>>>>    
+      FormulaOverheads;
+
+   
+    public PXSelectJoin<
+     EWPMFormulaTool, 
+      InnerJoin<AMToolMst, 
+        On<EWPMFormulaTool.toolID, Equal<AMToolMst.toolID>>>,
+       Where<EWPMFormulaTool.formulaID, Equal<Current<EWPMFormulaOper.formulaID>>,
+        And<EWPMFormulaTool.revisionNo, Equal<Current<EWPMFormulaOper.revisionNo>>,
+        And<EWPMFormulaTool.operationID, Equal<Current<EWPMFormulaOper.operationID>>>>>>
+      FormulaTools;
 
     #endregion
 
