@@ -50,7 +50,7 @@
                     <template1>
     <px:PXGrid ID="grid" runat="server" DataSourceID="ds" Width="100%" Height="100%" SkinID="Details" Caption="Operations" AutoAdjustColumns="True" SyncPosition="true">
         <Levels>
-            <px:PXGridLevel DataMember="FormulaOperRecords" >
+            <px:PXGridLevel DataMember="FormulaOperations" >
                 <RowTemplate>
                     <px:PXMaskEdit ID="edOperationCD" runat="server" DataField="OperationCD" />
                     <px:PXSelector ID="edWcID" runat="server" DataField="WcID" AllowEdit="True" />
@@ -84,17 +84,17 @@
         <ActionBar ActionsText="False">
         </ActionBar>
        <AutoCallBack Command="Refresh" Target="gridmatl" ActiveBehavior="true">
-            <Behavior RepaintControlsIDs="gridmatl,gridOvhd" />
+            <Behavior RepaintControlsIDs="gridmatl,gridOvhd,gridByProd,gridTool" />
         </AutoCallBack>
     </px:PXGrid>
 </template1>
                     <template2>
     <px:PXTab ID="PXTab1" runat="server" Width="100%" Height="100%">
 <Items>
-    <px:PXTabItem Text="Materials" LoadOnDemand="True" RepaintOnDemand="True"><Template>
+        <px:PXTabItem Text="Materials" LoadOnDemand="True" RepaintOnDemand="True"><Template>
             <px:PXGrid ID="gridMatl" runat="server" DataSourceID="ds" Width="100%" SkinID="DetailsInTab" SyncPosition="True">
                 <Levels>
-                    <px:PXGridLevel DataMember="FormulaMatlRecords">
+                    <px:PXGridLevel DataMember="FormulaMaterials">
                         <RowTemplate>
                             <px:PXLayoutRule ID="PXLayoutRule5" runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" />
                             <px:PXSegmentMask ID="edInventoryID" runat="server" DataField="InventoryID" AllowEdit="True" />
@@ -130,27 +130,6 @@
                 </Levels>
                 <Mode AllowUpload="True" AllowDragRows="true"/>
                 <AutoSize Enabled="True" />
-               <%-- <ActionBar ActionsText="False">
-                    <CustomItems>
-                        <px:PXToolBarButton Text="Reference Designators" PopupPanel="PanelRef" Enabled="true">
-                        </px:PXToolBarButton>
-                        <px:PXToolBarButton DependOnGrid="gridMatl" Key="cmdResetOrder">
-                            <AutoCallBack Command="ResetOrder" Target="ds" />
-                        </px:PXToolBarButton>
-                        <px:PXToolBarButton Text="Insert Row" SyncText="false" ImageSet="main" ImageKey="AddNew">
-                            <AutoCallBack Target="gridMatl" Command="AddNew" Argument="1"></AutoCallBack>
-                            <ActionBar ToolBarVisible="External" MenuVisible="true" />
-                        </px:PXToolBarButton>
-                        <px:PXToolBarButton Text="Cut Row" SyncText="false" ImageSet="main" ImageKey="Copy">
-                            <AutoCallBack Target="gridMatl" Command="Copy"></AutoCallBack>
-                            <ActionBar ToolBarVisible="External" MenuVisible="true" />
-                        </px:PXToolBarButton>
-                        <px:PXToolBarButton Text="Insert Cut Row" SyncText="false" ImageSet="main" ImageKey="Paste">
-                            <AutoCallBack Target="gridMatl" Command="Paste"></AutoCallBack>
-                            <ActionBar ToolBarVisible="External" MenuVisible="true" />
-                        </px:PXToolBarButton>
-                    </CustomItems>
-                </ActionBar>--%>
                
                 <Parameters>
 					<px:PXSyncGridParam ControlID="grid" />
@@ -163,7 +142,127 @@
         
    
          </Template>
-    </px:PXTabItem>   
+    </px:PXTabItem>  
+     <px:PXTabItem Text="Consumables" LoadOnDemand="True" RepaintOnDemand="True">
+        <Template>
+            <px:PXGrid ID="gridTool" runat="server" DataSourceID="ds" Height="150px" Width="100%" SkinID="DetailsInTab">
+                <Levels>
+                    <px:PXGridLevel DataMember="FormulaTools" >
+                        <RowTemplate>
+                            <px:PXLayoutRule ID="PXLayoutRule9" runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" />
+                            <px:PXSelector ID="edToolID" runat="server" DataField="ToolID" AllowEdit="True"/>
+                            <px:PXLayoutRule ID="PXLayoutRule10" runat="server" Merge="True" />
+                            <px:PXTextEdit ID="edToolDescr" runat="server" DataField="AMToolMst__Descr" MaxLength="60" />
+                            <px:PXNumberEdit Size="s" ID="edToolQtyReq" runat="server" DataField="QtyReq" />
+                            <px:PXNumberEdit Size="s" ID="edToolUnitCost" runat="server" DataField="UnitCost" />
+                             <px:PXNumberEdit Size="s" ID="PXNumberEdit1" runat="server" DataField="ExtendedCost" />
+
+                        </RowTemplate>
+                        <Columns>
+                            <px:PXGridColumn DataField="LineID" TextAlign="Right" Visible="False" />
+                            <px:PXGridColumn AllowNull="False" DataField="ToolID" MaxLength="30" Width="180px" AutoCallBack="True" CommitChanges="true"/>
+                            <px:PXGridColumn AllowNull="False" DataField="Descr"  MaxLength="60" Width="351px" />
+                            <px:PXGridColumn AllowNull="False" DataField="QtyReq" TextAlign="Right" Width="117px" CommitChanges="true"/>
+                            <px:PXGridColumn AllowNull="False" DataField="UnitCost" TextAlign="Right" Width="117px" CommitChanges="true"/>
+                            <px:PXGridColumn AllowNull="False" DataField="ExtendedCost" TextAlign="Right" Width="117px" />
+                        </Columns>
+                    </px:PXGridLevel>
+                </Levels>
+                <Mode AllowUpload="True"/>
+                <AutoSize Enabled="True" />
+                <ActionBar ActionsText="False">
+                </ActionBar>
+                <AutoCallBack>
+                </AutoCallBack>
+                <Parameters>
+                    <px:PXSyncGridParam ControlID="grid" />
+                </Parameters>
+            </px:PXGrid>
+        </Template>
+    </px:PXTabItem>
+     <px:PXTabItem Text="Overhead" LoadOnDemand="True" RepaintOnDemand="True">
+        <Template>
+            <px:PXGrid ID="gridOvhd" runat="server" DataSourceID="ds" Height="150px" Width="100%" SkinID="DetailsInTab">
+                <Levels>
+                    <px:PXGridLevel DataMember="FormulaOverheads" >
+                        <RowTemplate>
+                            <px:PXLayoutRule ID="PXLayoutRule13" runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" />
+                            <px:PXSelector ID="edOvhdID" runat="server" AllowNull="False" DataField="OvhdID" DataKeyNames="OvhdID" AllowEdit="True" />
+                            <px:PXTextEdit ID="edAMOverhead__Descr" runat="server" AllowNull="False" DataField="AMOverhead__Descr" MaxLength="60" />
+                            <px:PXDropDown ID="edAMOverhead__OvhdType" runat="server" AllowNull="False" DataField="AMOverhead__OvhdType" />
+                            <px:PXNumberEdit ID="edOFactor" runat="server" DataField="OFactor" />
+                        </RowTemplate>
+                        <Columns>
+                            <px:PXGridColumn DataField="LineID" TextAlign="Right" Visible="False" />
+                            <px:PXGridColumn AllowNull="False" DataField="OvhdID" MaxLength="10" Width="81px" AutoCallBack="True" DisplayFormat="&gt;AAAAAAAAAA" />
+                            <px:PXGridColumn DataField="AMOverhead__Descr" AllowNull="False" MaxLength="60" Width="351px" />
+                            <px:PXGridColumn AllowNull="False" DataField="AMOverhead__OvhdType" Width="198px" MaxLength="1" RenderEditorText="True" />
+                            <px:PXGridColumn DataField="OFactor" AllowNull="False" TextAlign="Right" Width="117px" />
+                        </Columns>
+                    </px:PXGridLevel>
+                </Levels>
+                <Mode AllowUpload="True"/>
+                <AutoSize Enabled="True" />
+                <ActionBar ActionsText="False">
+                </ActionBar>
+                <AutoCallBack>
+                </AutoCallBack>
+                <Parameters>
+                    <px:PXSyncGridParam ControlID="grid" />
+                </Parameters>
+            </px:PXGrid>
+        </Template>
+    </px:PXTabItem>
+     <px:PXTabItem Text="BY Products" LoadOnDemand="True" RepaintOnDemand="True"><Template>
+            <px:PXGrid ID="gridByProd" runat="server" DataSourceID="ds" Width="100%" SkinID="DetailsInTab" SyncPosition="True">
+                <Levels>
+                    <px:PXGridLevel DataMember="FormulaByProducts">
+                        <RowTemplate>
+                            <px:PXLayoutRule ID="PXLayoutRule15" runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" />
+                            <px:PXSegmentMask ID="edInventoryID1" runat="server" DataField="InventoryID" AllowEdit="True" />
+                            <px:PXSegmentMask ID="edSubItemID1" runat="server" DataField="SubItemID" />
+                            <px:PXTextEdit ID="edDescrMat1" runat="server" DataField="Descr" MaxLength="60" />
+                            <px:PXNumberEdit ID="edQtyReq1" runat="server" DataField="QtyReq" />
+                            <px:PXSelector ID="edUOM1" runat="server" DataField="UOM" AutoRefresh="True" />
+                            <px:PXNumberEdit ID="edUnitCost1" runat="server" DataField="UnitCost" />
+                            <px:PXLayoutRule ID="PXLayoutRule611" runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" />
+                            <px:PXSegmentMask ID="edSiteID1" runat="server" DataField="SiteID" CommitChanges="true" />
+                            <px:PXSegmentMask ID="edLocationID1" runat="server" DataField="LocationID" />
+                            <px:PXNumberEdit ID="edScrapFactor1" runat="server" DataField="ScrapFactor" />
+                            <px:PXLayoutRule ID="PXLayoutRule71" runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" />
+                            
+                        </RowTemplate>
+                        <Columns>
+                            <px:PXGridColumn DataField="LineID" TextAlign="Right" Width="54px" />
+                            <px:PXGridColumn DataField="SortOrder" TextAlign="Right" Width="54px" />
+                            <px:PXGridColumn DataField="InventoryID" Width="130px" AutoCallBack="True" />
+                            <px:PXGridColumn DataField="SubItemID" Width="81px" />
+                            <px:PXGridColumn DataField="Descr" MaxLength="255" Width="200px" />
+                            <px:PXGridColumn DataField="QtyReq" TextAlign="Right" Width="108px" AutoCallBack="True" />                            
+                            <px:PXGridColumn DataField="UOM" Width="81px" AutoCallBack="True" />
+                            <px:PXGridColumn DataField="UnitCost" TextAlign="Right" Width="108px" />
+                            <px:PXGridColumn DataField="SiteID" TextAlign="Left" Width="130px" CommitChanges="true" />
+                            <px:PXGridColumn DataField="LocationID" TextAlign="Right" Width="130px" />
+                            <px:PXGridColumn DataField="ScrapFactor" TextAlign="Right" Width="108px" />
+                           
+                        </Columns>
+                    </px:PXGridLevel>
+                </Levels>
+                <Mode AllowUpload="True" AllowDragRows="true"/>
+                <AutoSize Enabled="True" />
+               
+                <Parameters>
+					<px:PXSyncGridParam ControlID="grid" />
+				</Parameters>
+                <ActionBar ActionsText="False"></ActionBar>
+                <CallbackCommands PasteCommand="PasteLine">
+                    <Save PostData="Container" />
+                </CallbackCommands>
+            </px:PXGrid>
+        
+   
+         </Template>
+    </px:PXTabItem>  
    
 </Items>
 <AutoSize Enabled="True" />
@@ -177,8 +276,6 @@
                         <Template>
                             <px:PXLayoutRule runat="server" ControlSize="XM" StartColumn="True"></px:PXLayoutRule>
                             <px:PXSelector ID="edFormulaClassID" runat="server" AlreadyLocalized="False" DataField="FormulaClassID" CommitChanges="True">
-                            </px:PXSelector>
-                            <px:PXSelector ID="edFormulaPolicyID" runat="server" AlreadyLocalized="False" DataField="FormulaPolicyID" CommitChanges="True">
                             </px:PXSelector>
                             <px:PXDropDown ID="edApprovalStatus" Enabled="false" ReadOnly="true" runat="server" DataField="ApprovalStatus">
                             </px:PXDropDown>

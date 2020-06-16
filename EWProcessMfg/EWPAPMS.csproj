@@ -86,7 +86,11 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_c21738a3_722e_4a87_9519_944cda0a712b.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_e3925fd9_b8c8_4e2d_8338_ee96670b9375.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormula.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaByProd.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaMatl.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOper.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOvhd.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaTool.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMSetup.xml" />
   </ItemGroup>
   <ItemGroup>
