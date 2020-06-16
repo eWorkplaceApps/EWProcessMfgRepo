@@ -34,6 +34,7 @@
   <col name="VendorID" type="Int" nullable="true" />
   <col name="VendorLocationID" type="Int" nullable="true" />
   <col name="Temp" type="NVarChar(256)" nullable="true" />
+  <col name="LineCntrByProd" type="Int" />
   <index name="EWPMFormulaOper_PK" clustered="true" primary="true" unique="true">
     <col name="CompanyID" />
     <col name="FormulaID" />
