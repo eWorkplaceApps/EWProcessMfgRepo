@@ -28,8 +28,8 @@ namespace EW.PM {
   /// Formula Operation Material
   /// </summary>
   [Serializable]
-  [PXCacheName("EWPMFormulaMatl")]
-  public class EWPMFormulaMatl:IBqlTable, ISortOrder {
+  [PXCacheName("EWPMFormulaByProd")]
+  public class EWPMFormulaByProd:IBqlTable, ISortOrder {
 
     #region primary key fields
     public abstract class operationID:PX.Data.BQL.BqlInt.Field<operationID> {
@@ -64,7 +64,7 @@ namespace EW.PM {
     public abstract class lineID:PX.Data.BQL.BqlInt.Field<lineID> {
     }
     [PXDBInt(IsKey = true)]
-    [PXLineNbr(typeof(EWPMFormulaOper.lineCntrMatl))]
+    [PXLineNbr(typeof(EWPMFormulaOper.lineCntrByProd))]
     [PXUIField(DisplayName = "Line Nbr.", Visibility = PXUIVisibility.Visible, Visible = false, Enabled = false)]
     public virtual int? LineID {
       get;
@@ -157,15 +157,7 @@ namespace EW.PM {
       set;
     }
 
-    public abstract class bFlush:PX.Data.BQL.BqlBool.Field<bFlush> {
-    }
-    [PXDBBool]
-    [PXDefault(false)]
-    [PXUIField(DisplayName = "Backflus")]
-    public virtual bool? BFlush {
-      get;
-      set;
-    }
+   
 
     public abstract class isStockItem:PX.Data.BQL.BqlBool.Field<isStockItem> {
     }
@@ -269,7 +261,7 @@ namespace EW.PM {
     }
     [PXDBQuantity(typeof(uOM), typeof(baseQty))]
     [PXDefault(TypeCode.Decimal, "1.0")]
-    [PXUIField(DisplayName = "Qty Required")]
+    [PXUIField(DisplayName = "Qty Produced")]
     public virtual decimal? QtyReq {
       get;
       set;

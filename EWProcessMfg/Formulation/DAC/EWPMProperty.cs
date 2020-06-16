@@ -34,14 +34,11 @@ namespace EW.PM
     protected int? _ProprtyID;
     [PXDBIdentity()]
     [PXReferentialIntegrityCheck]
-    public virtual int? ProprtyID
-    {
-      get
-      {
+    public virtual int? ProprtyID {
+      get {
         return this._ProprtyID;
       }
-      set
-      {
+      set {
         this._ProprtyID = value;
       }
     }
@@ -56,14 +53,11 @@ namespace EW.PM
     [PXDBString(10, IsKey = true, IsUnicode = true, InputMask = "")]
     [PXDefault()]
     [PXUIField(DisplayName = "Seq. no.")]
-    public virtual string SequenceNo
-    {
-      get
-      {
+    public virtual string SequenceNo {
+      get {
         return this._SequenceNo;
       }
-      set
-      {
+      set {
         this._SequenceNo = value;
       }
     }
@@ -76,14 +70,11 @@ namespace EW.PM
     protected string _Description;
     [PXDBString(100, IsUnicode = true)]
     [PXUIField(DisplayName = "Description")]
-    public virtual string Description
-    {
-      get
-      {
+    public virtual string Description {
+      get {
         return this._Description;
       }
-      set
-      {
+      set {
         this._Description = value;
       }
     }
@@ -94,17 +85,14 @@ namespace EW.PM
     {
     }
     protected string _Type;
-    [PXDBString(10,IsUnicode = true, InputMask = "")]
+    [PXDBString(10, IsUnicode = true, InputMask = "")]
     [PXDefault()]
     [PXUIField(DisplayName = "Type")]
-    public virtual string Type
-    {
-      get
-      {
+    public virtual string Type {
+      get {
         return this._Type;
       }
-      set
-      {
+      set {
         this._Type = value;
       }
     }
@@ -117,14 +105,11 @@ namespace EW.PM
     protected int? _Factor;
     [PXDBInt()]
     [PXUIField(DisplayName = "Factor")]
-    public virtual int? Factor
-    {
-      get
-      {
+    public virtual int? Factor {
+      get {
         return this._Factor;
       }
-      set
-      {
+      set {
         this._Factor = value;
       }
     }
@@ -137,14 +122,11 @@ namespace EW.PM
     protected string _TagName;
     [PXDBString(254, IsUnicode = true)]
     [PXUIField(DisplayName = "Tag Name")]
-    public virtual string TagName
-    {
-      get
-      {
+    public virtual string TagName {
+      get {
         return this._TagName;
       }
-      set
-      {
+      set {
         this._TagName = value;
       }
     }
@@ -157,14 +139,11 @@ namespace EW.PM
     protected string _PropertyUnit;
     [PXDBString(100, IsUnicode = true)]
     [PXUIField(DisplayName = " Property Unit")]
-    public virtual string PropertyUnit
-    {
-      get
-      {
+    public virtual string PropertyUnit {
+      get {
         return this._PropertyUnit;
       }
-      set
-      {
+      set {
         this._PropertyUnit = value;
       }
     }
@@ -177,15 +156,27 @@ namespace EW.PM
     protected string _Group;
     [PXDBString(10, IsUnicode = true)]
     [PXUIField(DisplayName = "Group")]
-    public virtual string Group
-    {
-      get
-      {
+    public virtual string Group {
+      get {
         return this._Group;
       }
-      set
-      {
+      set {
         this._Group = value;
+      }
+    }
+
+
+
+    #endregion
+
+    #region DisplayPropertyName
+    public abstract class displayPropertyName : PX.Data.BQL.BqlString.Field<displayPropertyName>
+    {
+    }
+    [PXString(100, IsUnicode = true)]
+    public virtual string DisplayPropertyName {
+      get {
+        return this._ProprtyID + " - " + this._Description;
       }
     }
 
@@ -200,14 +191,11 @@ namespace EW.PM
     protected DateTime? _CreatedDateTime;
     [PXDBCreatedDateTime()]
     [PXUIField(DisplayName = PXDBLastModifiedByIDAttribute.DisplayFieldNames.CreatedDateTime, Enabled = false, IsReadOnly = true)]
-    public virtual DateTime? CreatedDateTime
-    {
-      get
-      {
+    public virtual DateTime? CreatedDateTime {
+      get {
         return this._CreatedDateTime;
       }
-      set
-      {
+      set {
         this._CreatedDateTime = value;
       }
     }
@@ -219,14 +207,11 @@ namespace EW.PM
     }
     protected String _CreatedByScreenID;
     [PXDBCreatedByScreenID()]
-    public virtual String CreatedByScreenID
-    {
-      get
-      {
+    public virtual String CreatedByScreenID {
+      get {
         return this._CreatedByScreenID;
       }
-      set
-      {
+      set {
         this._CreatedByScreenID = value;
       }
     }
@@ -238,14 +223,11 @@ namespace EW.PM
     }
     protected Guid? _CreatedByID;
     [PXDBCreatedByID()]
-    public virtual Guid? CreatedByID
-    {
-      get
-      {
+    public virtual Guid? CreatedByID {
+      get {
         return this._CreatedByID;
       }
-      set
-      {
+      set {
         this._CreatedByID = value;
       }
     }
@@ -258,14 +240,11 @@ namespace EW.PM
     protected DateTime? _LastModifiedDateTime;
     [PXDBLastModifiedDateTime()]
     [PXUIField(DisplayName = PXDBLastModifiedByIDAttribute.DisplayFieldNames.LastModifiedDateTime, Enabled = false, IsReadOnly = true)]
-    public virtual DateTime? LastModifiedDateTime
-    {
-      get
-      {
+    public virtual DateTime? LastModifiedDateTime {
+      get {
         return this._LastModifiedDateTime;
       }
-      set
-      {
+      set {
         this._LastModifiedDateTime = value;
       }
     }
@@ -277,14 +256,11 @@ namespace EW.PM
     }
     protected String _LastModifiedByScreenID;
     [PXDBLastModifiedByScreenID()]
-    public virtual String LastModifiedByScreenID
-    {
-      get
-      {
+    public virtual String LastModifiedByScreenID {
+      get {
         return this._LastModifiedByScreenID;
       }
-      set
-      {
+      set {
         this._LastModifiedByScreenID = value;
       }
     }
@@ -296,14 +272,11 @@ namespace EW.PM
     }
     protected Guid? _LastModifiedByID;
     [PXDBLastModifiedByID()]
-    public virtual Guid? LastModifiedByID
-    {
-      get
-      {
+    public virtual Guid? LastModifiedByID {
+      get {
         return this._LastModifiedByID;
       }
-      set
-      {
+      set {
         this._LastModifiedByID = value;
       }
     }
@@ -315,16 +288,26 @@ namespace EW.PM
     }
     protected Byte[] _tstamp;
     [PXDBTimestamp]
-    public virtual Byte[] tstamp
-    {
-      get
-      {
+    public virtual Byte[] tstamp {
+      get {
         return this._tstamp;
       }
-      set
-      {
+      set {
         this._tstamp = value;
       }
+    }
+
+
+
+
+    #endregion
+
+    #region NoteID    [PXNote()]
+    public virtual Guid? Noteid {
+      get; set;
+    }
+    public abstract class noteid : PX.Data.BQL.BqlGuid.Field<noteid>
+    {
     }
     #endregion
 

@@ -17,9 +17,12 @@ namespace EW.PM
 
     #region ItemPropertyID
     [PXDBInt()]
-    [PXUIField(DisplayName = "Item Property ID")]
+    [PXUIField(DisplayName = "Item Property ")]
+    [PXDBDefault(typeof(EWPMItemProperty.itemPropertyID))]
+    [PXParent(typeof(Select<EWPMItemProperty, Where<EWPMItemProperty.itemPropertyID, Equal<Current<itemPropertyID>>>>))]
     public virtual int? ItemPropertyID { get; set; }
     public abstract class itemPropertyID : PX.Data.BQL.BqlInt.Field<itemPropertyID> { }
+
     #endregion
 
     #region PropertyLineNbr
@@ -32,6 +35,10 @@ namespace EW.PM
     #region PropertyID
     [PXDBInt()]
     [PXUIField(DisplayName = "Property ID")]
+    [PXSelector(typeof(EWPMProperty.proprtyID),
+            typeof(EWPMProperty.proprtyID),
+            typeof(EWPMProperty.description), DescriptionField =  typeof(EWPMProperty.displayPropertyName)
+            )]
     public virtual int? PropertyID { get; set; }
     public abstract class propertyID : PX.Data.BQL.BqlInt.Field<propertyID> { }
     #endregion
@@ -39,7 +46,7 @@ namespace EW.PM
     #region PropertyType
 
     [PXString(500, IsUnicode = true, InputMask = "")]
-    [PXUIField(DisplayName = "Type")]
+    [PXUIField(DisplayName = "Type", Enabled = false)]
     public virtual string PropertyType {
       get; set;
     }
@@ -50,7 +57,7 @@ namespace EW.PM
     #region PropertyUnit
 
     [PXString(500, IsUnicode = true, InputMask = "")]
-    [PXUIField(DisplayName = "Unit")]
+    [PXUIField(DisplayName = "Unit", Enabled = false)]
     public virtual string PropertyUnit {
       get; set;
     }
@@ -61,7 +68,7 @@ namespace EW.PM
     #region PropertyGroup
 
     [PXString(500, IsUnicode = true, InputMask = "")]
-    [PXUIField(DisplayName = "Group")]
+    [PXUIField(DisplayName = "Group", Enabled = false)]
     public virtual string PropertyGroup {
       get; set;
     }
