@@ -77,6 +77,9 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx.cs">
       <DependentUpon>EM201500.aspx</DependentUpon>
     </Content>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201600.aspx.cs">
+      <DependentUpon>EM201600.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulation\DAC\EWPMBiolerplate.cs" />
     <Compile Include="Formulation\DAC\EWPMBoilerplateGroup.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
@@ -116,6 +119,9 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201400.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201600.aspx" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\pages_ew_em_em201100_aspx.xml" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\pages_ew_em_em201600_aspx.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\ProjectMetadata.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_1de3d5d1_5be9_45b3_a438_22db61b06159.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\SiteMapNode_454fb1ab_30d4_4a5a_ad85_32f09b90fa65.xml" />
