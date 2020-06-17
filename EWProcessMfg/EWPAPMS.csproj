@@ -58,10 +58,8 @@
   <ItemGroup>
     <Compile Include="Formulation\DAC\EWPMFormulaByProd.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaOper.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaTool.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaOvhd.cs" />
-    <Compile Include="Support\UIMessages.cs" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
     </Content>
@@ -83,13 +81,11 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx.cs">
       <DependentUpon>EM201500.aspx</DependentUpon>
     </Content>
-    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201600.aspx.cs">
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201600.aspx.cs">
       <DependentUpon>EM201600.aspx</DependentUpon>
-    </Compile>
+    </Content>
     <Compile Include="Formulation\DAC\EWPMBiolerplate.cs" />
     <Compile Include="Formulation\DAC\EWPMBoilerplateGroup.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaOhvd.cs" />
     <Compile Include="Formulation\DAC\EWPMProperty.cs" />
     <Compile Include="Formulation\DAC\EWPMPropertyGroup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateGroupMaint.cs" />
