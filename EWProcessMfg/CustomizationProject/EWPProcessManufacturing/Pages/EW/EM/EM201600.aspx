@@ -1,9 +1,9 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPages/ListView.master" AutoEventWireup="true" ValidateRequest="false" CodeFile="EM201100.aspx.cs" Inherits="Page_EM201100" Title="Untitled Page" %>
+<%@ Page Language="C#" MasterPageFile="~/MasterPages/ListView.master" AutoEventWireup="true" ValidateRequest="false" CodeFile="EM201600.aspx.cs" Inherits="Page_EM201600" Title="Untitled Page" %>
 
 <%@ MasterType VirtualPath="~/MasterPages/ListView.master" %>
 
 <asp:Content ID="cont1" ContentPlaceHolderID="phDS" runat="Server">
-    <px:PXDataSource ID="ds" runat="server" TypeName="EW.PM.EWPMBiolerplateGroupMaint" PrimaryView="BoilerplateGroup" Visible="True" Width="100%">
+    <px:PXDataSource ID="ds" runat="server" TypeName="EW.PM.EWPMBiolerplateMaint" PrimaryView="Boilerplates" Visible="True" Width="100%">
         <CallbackCommands>
         </CallbackCommands>
     </px:PXDataSource>
@@ -12,17 +12,21 @@
     <px:PXGrid ID="grid" runat="server" Height="400px" Width="100%" Style="z-index: 100"
         AllowPaging="True" AllowSearch="true" AdjustPageSize="Auto" DataSourceID="ds" SkinID="Primary">
         <Levels>
-            <px:PXGridLevel DataKeyNames="Name" DataMember="BoilerplateGroup">
+            <px:PXGridLevel DataMember="Boilerplates" DataKeyNames="BoilerplateCD">
                 <RowTemplate>
-                    <px:PXMaskEdit ID="edName" runat="server" AlreadyLocalized="False" DataField="Name">
+                    <px:PXMaskEdit ID="edBoilerplateCD" runat="server" AlreadyLocalized="False" DataField="BoilerplateCD">
                     </px:PXMaskEdit>
                     <px:PXTextEdit ID="edDescription" runat="server" AlreadyLocalized="False" DataField="Description">
                     </px:PXTextEdit>
+                    <px:PXSelector ID="edBoilerplateGroupID" runat="server" DataField="BoilerplateGroupID">
+                    </px:PXSelector>
                 </RowTemplate>
                 <Columns>
-                    <px:PXGridColumn DataField="Name" Width="180px">
+                    <px:PXGridColumn DataField="BoilerplateCD" Width="180px">
                     </px:PXGridColumn>
                     <px:PXGridColumn DataField="Description" Width="500px">
+                    </px:PXGridColumn>
+                    <px:PXGridColumn DataField="BoilerplateGroupID" >
                     </px:PXGridColumn>
                 </Columns>
             </px:PXGridLevel>

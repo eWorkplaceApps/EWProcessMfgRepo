@@ -2,7 +2,7 @@ using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Page_EM201100:PX.Web.UI.PXPage {
+public partial class Page_EM201600:PX.Web.UI.PXPage {
     protected void Page_Init(object sender, EventArgs e) {
     }
 }
