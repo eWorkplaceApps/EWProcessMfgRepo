@@ -131,12 +131,11 @@ namespace EW.PM {
 
     public abstract class extendedCost:PX.Data.BQL.BqlDecimal.Field<extendedCost> {
     }
-    [PXDependsOnFields(typeof(unitCost), typeof(qtyReq))]
+   // [PXDependsOnFields(typeof(unitCost), typeof(qtyReq))]
+    [PXFormula(typeof(Mult<unitCost,qtyReq>))]
     [PXUIField(DisplayName = "Extended Cost",Enabled =false)]
     public virtual decimal? ExtendedCost {
-      get {
-        return UnitCost * QtyReq;
-      }
+      get;set;
 
     }
 
