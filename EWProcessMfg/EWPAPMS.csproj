@@ -85,12 +85,12 @@
     </Content>
     <Compile Include="Formulation\DAC\EWPMBiolerplate.cs" />
     <Compile Include="Formulation\DAC\EWPMBoilerplateGroup.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaOhvd.cs" />
+
+
     <Compile Include="Formulation\DAC\EWPMProperty.cs" />
     <Compile Include="Formulation\DAC\EWPMPropertyGroup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateGroupMaint.cs" />
-    <Compile Include="Formulation\DAC\EWPMFormulaOper.cs" />
+
     <Compile Include="Formulation\DAC\EWPMFormulaClass.cs" />
     <Compile Include="Formulation\DAC\EWPMItemProperty.cs" />
     <Compile Include="Formulation\DAC\EWPMItemPropertyDetail.cs" />
@@ -99,7 +99,7 @@
     <Compile Include="Formulation\Graph\Maint\EWPMBiolerplateMaint.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMPropertyGroupMaint.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMPropertyMaint.cs" />
-    <Compile Include="Support\UIMessages.cs" />
+    
     <Compile Include="Formulation\DAC\EWPMFormula.cs" />
     <Compile Include="Configuration\DAC\EWPMSetup.cs" />
     <Compile Include="Formulation\Graph\Maint\EWPMFormulaMaint.cs" />

@@ -73,7 +73,7 @@ namespace EW.PM {
     public class FormulaStatusObselete:Constant<string> {
       public FormulaStatusObselete() : base("O") { }
     }
-    public class FormulaStatusOnHold:Constant<string> {
+    public class FormulaStatusOnHold:PX.Data.BQL.BqlString.Constant<FormulaStatusOnHold> {
       public FormulaStatusOnHold() : base("H") { }
     }
 
