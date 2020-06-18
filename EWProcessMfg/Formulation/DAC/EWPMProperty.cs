@@ -87,6 +87,7 @@ namespace EW.PM
     protected string _Type;
     [PXDBString(10, IsUnicode = true, InputMask = "")]
     [PXDefault()]
+    [EWPMDataType.List()]
     [PXUIField(DisplayName = "Type")]
     public virtual string Type {
       get {
@@ -155,6 +156,7 @@ namespace EW.PM
     }
     protected string _Group;
     [PXDBString(10, IsUnicode = true)]
+    [PXSelector(typeof(EWPMPropertyGroup.groupCode),typeof(EWPMPropertyGroup.description), SubstituteKey = typeof(EWPMPropertyGroup.groupCode))]
     [PXUIField(DisplayName = "Group")]
     public virtual string Group {
       get {

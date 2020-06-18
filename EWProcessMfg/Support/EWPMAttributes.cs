@@ -120,5 +120,30 @@ namespace EW.PM {
   public class OperationIDFieldAttribute:AcctSubAttribute {
 
   }
+  public class EWPMDataType
+  {
+    public const string Weight = "W";
+    public const string Volume = "V";
+    public const string Constant = "C";
+    public class UI
+    {
+      public const string Weight = "Weight";
+      public const string Volume = "Volume";
+      public const string Constant = "Constant";
+    }
+    public class ListAttribute : PXStringListAttribute
+    {
+      public ListAttribute() : base(
+        new[]
+        {
+          Pair(Weight, UI.Weight),
+          Pair(Volume, UI.Volume),
+           Pair(Constant, UI.Constant),
+        })
+      {
+      }
+    }
+  }
+
 }
 

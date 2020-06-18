@@ -41,6 +41,21 @@ namespace EW.PM {
       EWPMPropertyGroup line = (EWPMPropertyGroup)e.Row;
       if (e.Operation != PXDBOperation.Delete)
       {
+        if (string.IsNullOrEmpty(line.SequenceNo))
+        {
+          throw new PXRowPersistingException(UIMessages.PropertyGroupClassSeqNoFieldName,
+                  null,
+                  ErrorMessages.FieldIsEmpty,
+                  UIMessages.PropertyGroupClassSeqNoFieldDisplayName);
+        }
+
+        if (string.IsNullOrEmpty(line.GroupCode))
+        {
+          throw new PXRowPersistingException(UIMessages.PropertyGroupClassGrpCodeFieldName,
+                  null,
+                  ErrorMessages.FieldIsEmpty,
+                  UIMessages.PropertyGroupClassGrpCodeDisplayName);
+        }
 
       }
     }
