@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
+      <DependentUpon>EM201000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx.cs">
+      <DependentUpon>EM201200.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulation\DAC\EWPMFormulaByProd.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaTool.cs" />
@@ -63,9 +69,11 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
     </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201100.aspx.cs">
       <DependentUpon>EM201100.aspx</DependentUpon>
     </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx.cs">
       <DependentUpon>EM201300.aspx</DependentUpon>
     </Content>
@@ -99,6 +107,7 @@
     <Compile Include="Configuration\EWPMSetupMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\EWPMAttributes.cs" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOper.xml" />
     <Content Include="EWProcessMfg.csproj.user" />
   </ItemGroup>
   <ItemGroup>
