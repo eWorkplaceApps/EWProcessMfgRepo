@@ -13,9 +13,17 @@
 		Width="100%" Height="150px" SkinID="Details">
 		<Levels>
 		<px:PXGridLevel  DataMember="Property">
+                <RowTemplate>
+                            <px:PXDropDown ID="edType" runat="server" DataField="DataType">
+                            </px:PXDropDown>
+                            <px:PXSelector ID="edUnit" runat="server" DataField="PropertyUnit">
+                            </px:PXSelector>
+                            <px:PXSelector ID="edGroup" runat="server" DataField="Group">
+                            </px:PXSelector>
+                        
+                        </RowTemplate>
                  <Columns>
  <px:PXGridColumn DataField="SequenceNo" Width="72" />
-<px:PXGridColumn DataField="GroupCode" Width="72" />
  <px:PXGridColumn DataField="Description" Width="72" />
   <px:PXGridColumn DataField="Factor" Width="72" />
  <px:PXGridColumn DataField="Type" Width="72" />
