@@ -248,7 +248,7 @@ namespace EW.PM
     }
     protected int? _FormulaClassID;
     [PXDBInt()]
-    [PXSelector(typeof(CREmployee.userID), SubstituteKey = typeof(CREmployee.acctName))]
+    [PXSelector(typeof(EWPMFormulaClass.formulaClassID), typeof(EWPMFormulaClass.formulaClassCD), SubstituteKey = typeof(EWPMFormulaClass.formulaClassCD))]
     [PXUIField(DisplayName = "Formula Class ID")]
     public virtual int? FormulaClassID {
       get {
