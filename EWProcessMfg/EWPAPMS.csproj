@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
+      <DependentUpon>EM201000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx.cs">
+      <DependentUpon>EM201200.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulation\DAC\EWPMFormulaByProd.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaMatl.cs" />
     <Compile Include="Formulation\DAC\EWPMFormulaTool.cs" />
@@ -63,15 +69,11 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx.cs">
       <DependentUpon>EM101000.aspx</DependentUpon>
     </Content>
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
-      <DependentUpon>EM201000.aspx</DependentUpon>
-    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201100.aspx.cs">
       <DependentUpon>EM201100.aspx</DependentUpon>
     </Content>
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx.cs">
-      <DependentUpon>EM201200.aspx</DependentUpon>
-    </Content>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx.cs">
       <DependentUpon>EM201300.aspx</DependentUpon>
     </Content>
@@ -105,6 +107,7 @@
     <Compile Include="Configuration\EWPMSetupMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\EWPMAttributes.cs" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOper.xml" />
     <Content Include="EWProcessMfg.csproj.user" />
   </ItemGroup>
   <ItemGroup>
@@ -116,9 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM101000.aspx" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201100.aspx" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201200.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201300.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201400.aspx" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201500.aspx" />
@@ -137,15 +138,11 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMBoilerplateGroup.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormula.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaClass.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaByProd.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaMatl.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOper.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMItemProperty.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMItemPropertyDetail.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMProperty.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMPropertyGroup.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaOvhd.xml" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMFormulaTool.xml" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMSetup.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
