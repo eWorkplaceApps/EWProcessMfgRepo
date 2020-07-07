@@ -1,0 +1,30 @@
+﻿<Sql TableName="EWPMFormulaOvhd" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMFormulaOvhd">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="FormulaID" type="NVarChar(15)" />
+  <col name="RevisionNo" type="NVarChar(10)" />
+  <col name="OperationID" type="Int" />
+  <col name="EffEndDate" type="SmallDateTime" nullable="true" />
+  <col name="EffStartDate" type="SmallDateTime" nullable="true" />
+  <col name="OFactor" type="Decimal(19,6)" />
+  <col name="OperNbr" type="NChar(10)" nullable="true" />
+  <col name="OvhdID" type="NVarChar(20)" />
+  <col name="RowStatus" type="Int" nullable="true" />
+  <col name="LineID" type="Int" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="EWPMFormulaOvhd_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="FormulaID" />
+    <col name="RevisionNo" />
+    <col name="OperationID" />
+    <col name="LineID" />
+  </index>
+</table>]]></CDATA>
+</Sql>
