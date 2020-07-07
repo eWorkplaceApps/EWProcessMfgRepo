@@ -13,5 +13,9 @@
   <col name="LastModifiedByID" type="UniqueIdentifier" />
   <col name="NoteID" type="UniqueIdentifier" />
   <col name="tstamp" type="Timestamp" />
+  <index name="EWPMBiolerplate_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
 </table>]]></CDATA>
 </Sql>

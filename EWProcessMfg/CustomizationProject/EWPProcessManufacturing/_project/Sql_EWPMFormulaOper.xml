@@ -13,6 +13,7 @@
   <col name="LineCntrOvhd" type="Int" />
   <col name="LineCntrStep" type="Int" />
   <col name="LineCntrTool" type="Int" />
+  <col name="lineCntrByProd" type="Int" />
   <col name="LastModifiedDateTime" type="DateTime" />
   <col name="LastModifiedByScreenID" type="Char(8)" />
   <col name="LastModifiedByID" type="UniqueIdentifier" />

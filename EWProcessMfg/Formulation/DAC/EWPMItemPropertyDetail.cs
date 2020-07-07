@@ -37,7 +37,7 @@ namespace EW.PM
     [PXUIField(DisplayName = "Property ID")]
     [PXSelector(typeof(EWPMProperty.proprtyID),
             typeof(EWPMProperty.proprtyID),
-            typeof(EWPMProperty.description), DescriptionField =  typeof(EWPMProperty.displayPropertyName)
+            typeof(EWPMProperty.description), SubstituteKey  =  typeof(EWPMProperty.description)
             )]
     public virtual int? PropertyID { get; set; }
     public abstract class propertyID : PX.Data.BQL.BqlInt.Field<propertyID> { }

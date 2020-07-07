@@ -1,8 +1,7 @@
 ﻿<Sql TableName="EWPMFormula" TableSchemaXml="#CDATA">
     <CDATA name="TableSchemaXml"><![CDATA[<table name="EWPMFormula">
-  <col name="FormulaID" type="Int" identity="true" />
-  <col name="FormulaCD" type="NVarChar(50)" />
-  <col name="RevisionNo" type="NVarChar(10)" nullable="true" />
+  <col name="FormulaID" type="NVarChar(50)" />
+  <col name="RevisionNo" type="NVarChar(10)" />
   <col name="Version" type="NVarChar(10)" nullable="true" />
   <col name="Description" type="NVarChar(255)" nullable="true" />
   <col name="Remarks" type="NVarChar(4000)" nullable="true" />
@@ -27,13 +26,11 @@
   <col name="ApprovedBy" type="UniqueIdentifier" nullable="true" />
   <col name="DefaultRMWarehouse" type="Int" nullable="true" />
   <col name="RevisionReason" type="NVarChar(400)" nullable="true" />
-  <index name="EWPMFormula_NoteID" unique="true">
-    <col name="NoteID" />
-    <col name="CompanyID" />
-  </index>
-  <index name="PK_EWPMFormula" clustered="true" primary="true" unique="true">
+  <col name="LineCntrOperation" type="Int" nullable="true" />
+  <index name="EWPMFormula_PK" clustered="true" primary="true" unique="true">
     <col name="CompanyID" />
     <col name="FormulaID" />
+    <col name="RevisionNo" />
   </index>
 </table>]]></CDATA>
 </Sql>
