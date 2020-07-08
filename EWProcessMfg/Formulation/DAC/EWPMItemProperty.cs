@@ -24,7 +24,7 @@ namespace EW.PM
     //Equal<True>>>>>), new Type[] { typeof(InventoryItem.inventoryCD), typeof(InventoryItem.descr) },
     // SubstituteKey = typeof(InventoryItem.inventoryCD))]
     [PXSelector(typeof(InventoryItem.inventoryID),
-             typeof(InventoryItem.inventoryID),
+             typeof(InventoryItem.inventoryCD), typeof(InventoryItem.descr),
             SubstituteKey =  typeof(InventoryItem.inventoryCD)
              )]
     public virtual string InventoryID { get; set; }
