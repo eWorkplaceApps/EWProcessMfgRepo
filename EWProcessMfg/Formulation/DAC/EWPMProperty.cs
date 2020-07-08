@@ -19,6 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PX.Data;
 using PX.Data.ReferentialIntegrity.Attributes;
+using PX.Objects.IN;
 
 namespace EW.PM
 {
@@ -52,6 +53,7 @@ namespace EW.PM
     protected string _SequenceNo;
     [PXDBString(10, IsKey = true, IsUnicode = true, InputMask = "")]
     [PXDefault()]
+    [PXCheckUnique(typeof(sequenceNo))]
     [PXUIField(DisplayName = "Seq. no.")]
     public virtual string SequenceNo {
       get {
@@ -140,6 +142,7 @@ namespace EW.PM
     protected string _PropertyUnit;
     [PXDBString(100, IsUnicode = true)]
     [PXUIField(DisplayName = " Property Unit")]
+    [PXSelector(typeof(INUnit.toUnit), SubstituteKey = typeof(INUnit.toUnit))]
     public virtual string PropertyUnit {
       get {
         return this._PropertyUnit;
