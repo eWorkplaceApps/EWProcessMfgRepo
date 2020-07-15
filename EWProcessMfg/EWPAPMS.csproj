@@ -32,22 +32,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JAMS">
-      <HintPath>..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\JAMS.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\JAMS.dll</HintPath>
     </Reference>
     <Reference Include="PX.Common">
-      <HintPath>..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.Common.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.Common.dll</HintPath>
     </Reference>
     <Reference Include="PX.CS.Contracts">
-      <HintPath>..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.CS.Contracts.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.CS.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="PX.Data">
-      <HintPath>..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.Data.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.Data.dll</HintPath>
     </Reference>
     <Reference Include="PX.Objects">
-      <HintPath>..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.Objects.DLL</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\Program Files\Acumatica ERP\AcumaticaQMSDB\Bin\PX.Objects.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
