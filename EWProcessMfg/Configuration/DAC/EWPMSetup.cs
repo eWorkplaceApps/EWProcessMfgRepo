@@ -19,7 +19,7 @@ using PX.Objects.IN;
              
 namespace EW.PM {
 
-
+  //Changes
     [System.SerializableAttribute()]
     [PXPrimaryGraph(typeof(EWPMSetupMaint))]
     public class EWPMSetup:PX.Data.IBqlTable {
