@@ -53,8 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Bin\EWPAPMS.dll" />
-    <Content Include="CustomizationProject\EWPProcessManufacturing\Bin\EWPAPMS.pdb" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
       <DependentUpon>EM201000.aspx</DependentUpon>
     </Content>
@@ -110,6 +108,7 @@
     <Content Include="EWProcessMfg.csproj.user" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CustomizationProject\EWPProcessManufacturing\Bin\" />
     <Folder Include="Formulation\Graph\Entry\" />
     <Folder Include="Laboratory\" />
   </ItemGroup>
