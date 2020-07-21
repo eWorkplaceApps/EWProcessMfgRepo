@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Bin\EWPAPMS.dll" />
+    <Content Include="CustomizationProject\EWPProcessManufacturing\Bin\EWPAPMS.pdb" />
     <Content Include="CustomizationProject\EWPProcessManufacturing\Pages\EW\EM\EM201000.aspx.cs">
       <DependentUpon>EM201000.aspx</DependentUpon>
     </Content>
@@ -142,6 +144,13 @@
     <Content Include="CustomizationProject\EWPProcessManufacturing\_project\Sql_EWPMSetup.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT ($(ConfigurationName)) == (Debug) GOTO END
+cd $(ProjectDir)
+copy /y bin\debug\EWPAPMS.dll C:\AcumaticaCustomizations\Source\EWProcessMfgRepos\EWProcessMfg\CustomizationProject\EWPProcessManufacturing\Bin
+copy /y bin\debug\EWPAPMS.pdb C:\AcumaticaCustomizations\Source\EWProcessMfgRepos\EWProcessMfg\CustomizationProject\EWPProcessManufacturing\Bin
+</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
