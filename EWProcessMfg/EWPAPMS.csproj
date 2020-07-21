@@ -144,10 +144,19 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>IF NOT ($(ConfigurationName)) == (Debug) GOTO END
+    <PostBuildEvent>IF  ($(ConfigurationName)) == (Debug) (
 cd $(ProjectDir)
 copy /y bin\debug\EWPAPMS.dll C:\AcumaticaCustomizations\Source\EWProcessMfgRepos\EWProcessMfg\CustomizationProject\EWPProcessManufacturing\Bin
 copy /y bin\debug\EWPAPMS.pdb C:\AcumaticaCustomizations\Source\EWProcessMfgRepos\EWProcessMfg\CustomizationProject\EWPProcessManufacturing\Bin
+)
+
+IF  ($(ConfigurationName)) == (Release) (
+cd $(ProjectDir)
+copy /y bin\release\EWPAPMS.dll C:\AcumaticaCustomizations\Source\EWProcessMfgRepos\EWProcessMfg\CustomizationProject\EWPProcessManufacturing\Bin
+copy /y bin\release\EWPAPMS.pdb C:\AcumaticaCustomizations\Source\EWProcessMfgRepos\EWProcessMfg\CustomizationProject\EWPProcessManufacturing\Bin
+)
+
+
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
